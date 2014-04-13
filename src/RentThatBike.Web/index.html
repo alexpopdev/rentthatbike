@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8" />
+    <title>Chapter2 Example8</title>
+    <link href="content/bootstrap.css" rel="stylesheet" />
+    <link href="content/app/app.css" rel="stylesheet" />
+</head>
+<body ng-controller="ApplicationController">
+    <header>
+        <nav class="navbar navbar-inverse" role="navigation">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" ng-click="isMainMenuCollapsed = !isMainMenuCollapsed">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Rent That Bike!</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" collapse="isMainMenuCollapsed">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#/rentals">Rentals</a></li>
+                        <li><a href="#/customers">Customers</a></li>
+                        <li><a href="#/bicycles">Bicycles</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+    </header>
+    <section>
+        <div class="container" ng-view>
+        </div>
+    </section>
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/angular-route.js"></script>
+    <script src="scripts/ui-bootstrap-tpls-0.10.0.js"></script>
+    <script src="scripts/app/app.js"></script>
+    <script src="scripts/app/services/playerService.js"></script>
+    <script src="scripts/app/controllers/applicationController.js"></script>
+</body>
+</html>
