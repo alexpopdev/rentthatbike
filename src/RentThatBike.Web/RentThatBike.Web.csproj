@@ -77,9 +77,11 @@
     <Content Include="scripts\angular-route.min.js.map" />
     <None Include="scripts\jquery-1.9.0.intellisense.js" />
     <Content Include="scripts\app\app.js" />
+    <Content Include="scripts\app\controllers\bicycleController.js" />
     <Content Include="scripts\app\controllers\bicyclesController.js" />
     <Content Include="scripts\app\controllers\applicationController.js" />
     <Content Include="scripts\app\services\bicyclesService.js" />
+    <Content Include="scripts\app\views\bicyclesNew.html" />
     <Content Include="scripts\app\views\default.html" />
     <Content Include="scripts\app\views\rentalsIndex.html" />
     <Content Include="scripts\app\views\customersIndex.html" />
