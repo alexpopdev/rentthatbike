@@ -3,6 +3,25 @@
         <h1>Bicycles</h1>
     </div>
     <div class="col-md-12">
-        To be implemented ...
+        <table class="table table-bordered table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Quantity</th>
+                    <th>Daily rent price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="bicycle in bicycles">
+                    <td>{{bicycle.id}}</td>
+                    <td>{{bicycle.name}}</td>
+                    <td>{{bicycle.typeName}}</td>
+                    <td>{{bicycle.quantity}}</td>
+                    <td>{{bicycle.rentPrice | currency}}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
