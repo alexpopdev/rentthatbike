@@ -18,11 +18,26 @@
                     { id: 4, name: "Very colorful bike", type: 4, typeName: "Children Bike", quantity: 20, rentPrice: 9 }
         ];
 
-      
+        var updateBicycleTypeName = function (bicycle) {
+            angular.forEach(bicycleTypes, function (bicycleType) {
+                if (bicycleType.id == bicycle.type) {
+                    bicycle.typeName = bicycleType.name;
+                }
+            });
+        };
 
         return {
             getBicycles: function () {
                 return bicycles;
+            },
+            getBicycle: function (bicyleId) {
+                var existingBicycle = null;
+                angular.forEach(bicycles, function (bicycle) {
+                    if (bicycle.id == bicyleId) {
+                        existingBicycle = bicycle;
+                    }
+                });
+                return existingBicycle;
             },
             getBicycleTypes: function () {
                 return bicycleTypes;
@@ -35,14 +50,13 @@
                     rentPrice: 10
                 };
             },
-            addBicycle: function(bicycle) {
-                angular.forEach(bicycleTypes, function (bicycleType) {
-                    if (bicycleType.id == bicycle.type) {
-                        bicycle.typeName = bicycleType.name;
-                    }
-                });
+            addBicycle: function (bicycle) {
+                updateBicycleTypeName(bicycle);
                 bicycle.id = bicycles.length;
                 bicycles.push(bicycle);
+            },
+            updateBicycle: function (bicycle) {
+                updateBicycleTypeName(bicycle);
             }
         };
     });

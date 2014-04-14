@@ -2,11 +2,11 @@
     <div class="col-md-12">
         <form name="bicyleForm" role="form" class="form-horizontal" novalidate ng-submit="submit()">
             <fieldset>
-                <legend>Add new bicycle</legend>
+                <legend>{{formTitle}}</legend>
                 <div class="form-group" ng-class="{'has-error': bicyleForm.inputName.$invalid}">
                     <label for="inputName" class="col-md-2 control-label">Name</label>
                     <div class="col-md-4">
-                        <input type="text" class="form-control" name="inputName" placeholder="Enter bicycle name here ..." required ng-model="bicycle.name">
+                        <input type="text" class="form-control" name="inputName" placeholder="Enter bicycle name here ..." required ng-model="bicycle.name" ng-disabled="!isNew">
                     </div>
                     <div class="col-md-2">
                         <span ng-show="bicyleForm.inputName.$error.required" class="help-block">Required</span>
@@ -45,8 +45,8 @@
                 </div>
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
-                        <button type="submit" ng-disabled="bicyleForm.$invalid" class="btn btn-primary">Add new bicycle</button>
-                        <button type="button" class="btn">Cancel</button>
+                        <button type="submit" ng-disabled="bicyleForm.$invalid" class="btn btn-primary">{{formTitle}}</button>
+                        <button type="button" class="btn" ng-click="cancel()">Cancel</button>
                     </div>
                 </div>
             </fieldset>
