@@ -3,10 +3,16 @@
         <form name="bicyleForm" role="form" class="form-horizontal" novalidate ng-submit="submit()">
             <fieldset>
                 <legend>{{formTitle}}</legend>
+                <div class="form-group" ng-show="!isNew">
+                    <label for="inputId" class="col-md-2 control-label">Id</label>
+                    <div class="col-md-1">
+                        <input type="text" class="form-control" name="inputId" value="{{bicycle.id}}" disabled>
+                    </div>
+                </div>
                 <div class="form-group" ng-class="{'has-error': bicyleForm.inputName.$invalid}">
                     <label for="inputName" class="col-md-2 control-label">Name</label>
                     <div class="col-md-4">
-                        <input type="text" class="form-control" name="inputName" placeholder="Enter bicycle name here ..." required ng-model="bicycle.name" ng-disabled="!isNew">
+                        <input type="text" class="form-control" name="inputName" placeholder="Enter bicycle name here ..." required ng-model="bicycle.name">
                     </div>
                     <div class="col-md-2">
                         <span ng-show="bicyleForm.inputName.$error.required" class="help-block">Required</span>
