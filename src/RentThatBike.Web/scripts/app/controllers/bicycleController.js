@@ -5,9 +5,9 @@
 
     myAppModule.controller('BicycleController', ['$scope', '$location', '$routeParams', 'bicyclesService',
             function ($scope, $location, $routeParams, bicyclesService) {
-                $scope.bicycleTypes = bicyclesService.getBicycleTypes();
-
                 $scope.isNew = !$routeParams.bicycleId;
+
+                $scope.bicycleTypes = bicyclesService.getBicycleTypes();
 
                 var originalBicyle = null;
 
@@ -31,9 +31,9 @@
                     $location.path('/bicycles');
                 };
 
-                $scope.cancel = function () {
+                $scope.cancel = function() {
                     $location.path('/bicycles');
-                }
+                };
             }
     ]);
 })();
