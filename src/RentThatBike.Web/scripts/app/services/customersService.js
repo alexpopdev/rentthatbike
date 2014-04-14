@@ -25,7 +25,7 @@
                 return existingCustomer;
             },
             addCustomer: function (customer) {
-                customer.id = customer.length;
+                customer.id = customers.length + 1;
                 customers.push(customer);
             }
         };
