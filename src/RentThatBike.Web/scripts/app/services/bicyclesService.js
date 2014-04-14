@@ -52,7 +52,7 @@
             },
             addBicycle: function (bicycle) {
                 updateBicycleTypeName(bicycle);
-                bicycle.id = bicycles.length;
+                bicycle.id = bicycles.length + 1;
                 bicycles.push(bicycle);
             },
             updateBicycle: function (bicycle) {
