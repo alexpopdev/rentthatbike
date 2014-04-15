@@ -15,7 +15,7 @@
                 } else {
                     originalCustomer = customersService.getCustomer($routeParams.customerId);
                     $scope.customer = angular.copy(originalCustomer);
-                    $scope.formTitle = "Update bicycle";
+                    $scope.formTitle = "Update customer";
                 }
 
                 $scope.submit = function () {
