@@ -2,7 +2,46 @@
     <div class="col-md-12">
         <h1>Rentals</h1>
     </div>
+</div>
+<div class="row">
     <div class="col-md-12">
-        To be implemented ...
+        <a class="btn btn-primary" role="button" href="#/rentals/new">Add new rental</a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        &nbsp;
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Bicycle</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Paid</th>
+                    <th>Customer</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="rental in rentals">
+                    <td>{{rental.id}}</td>
+                    <td>{{rental.startDate | date:'yyyy-MM-dd EEE'}}</td>
+                    <td>{{rental.endDate | date:'yyyy-MM-dd EEE'}}</td>
+                    <td>{{rental.bicycle.name}}</td>
+                    <td>{{rental.quantity}}</td>
+                    <td>{{rental.totalPrice | currency}}</td>
+                    <td>{{rental.paid}}</td>
+                    <td>{{rental.customer.firstName + ' ' + rental.customer.lastName}}</td>
+                    <td><a class="btn btn-default" role="button" href="#/rentals/{{rental.id}}/edit">Edit</a></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
