@@ -35,13 +35,14 @@
                     rentPrice: 10
                 };
             },
+
             addBicycle: function(bicycle) {
                 angular.forEach(bicycleTypes, function (bicycleType) {
                     if (bicycleType.id == bicycle.type) {
                         bicycle.typeName = bicycleType.name;
                     }
                 });
-                bicycle.id = bicycles.length;
+                bicycle.id = bicycles.length + 1;
                 bicycles.push(bicycle);
             }
         };
