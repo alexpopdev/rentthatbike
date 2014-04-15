@@ -6,6 +6,8 @@ The main application example for my upcoming book "Learning AngularJS for .Net D
 You need to use Visual Studio 2013 to load the "src\RentThatBike.sln" file and run the project.
 The application was built sequentially and has three main sequences: building the client side part with AngularJS, building the web service services part with ServiceStack, and the putting it all together part with AngularJS, ASP.NET MVC and ServiceStack.
 
+The application is hosted here: [rentthatbike.azurewebsites.net](http://rentthatbike.azurewebsites.net)
+
 ###"Home" view  
 ![Home](/docs/images/home.PNG "Home")
 
@@ -23,3 +25,4 @@ The application was built sequentially and has three main sequences: building th
 ![Index](/docs/images/rentals_index.PNG "Index")
 ![New](/docs/images/rentals_new.PNG "New")
 ![Edit](/docs/images/rentals_edit.PNG "Edit")
+
