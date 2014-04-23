@@ -27,5 +27,15 @@ namespace RentThatBike.Web.ServiceInterface
             BicyleRepository.Add(request.Bicycle);
             return request.Bicycle;
         }
+
+        public Bicycle Put(PutBicycleRequest request)
+        {
+            Bicycle bicycle = BicyleRepository.Single(b => b.Id == request.Id);
+            bicycle.Name = request.Bicycle.Name;
+            bicycle.Type = request.Bicycle.Type;
+            bicycle.Quantity = request.Bicycle.Quantity;
+            bicycle.RentPrice = request.Bicycle.RentPrice;
+            return bicycle;
+        }
     }
 }
