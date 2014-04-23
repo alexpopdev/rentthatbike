@@ -21,5 +21,11 @@ namespace RentThatBike.Web.ServiceInterface
         {
             return BicyleRepository.Single(b => b.Id == request.Id);
         }
+
+        public Bicycle Post(PostBicycleRequest request)
+        {
+            BicyleRepository.Add(request.Bicycle);
+            return request.Bicycle;
+        }
     }
 }

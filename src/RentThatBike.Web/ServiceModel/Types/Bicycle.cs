@@ -17,7 +17,7 @@ namespace RentThatBike.Web.ServiceModel.Types
         {
             get
             {
-                return Type.ToString();
+                return Type.ToString().Replace("Bike", " Bike");
             }
         }
 

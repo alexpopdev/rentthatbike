@@ -21,9 +21,20 @@ namespace RentThatBike.Web.ServiceModel.Types
             return _bicycles;
         }
 
-        public Bicycle Single(Expression<Func<Bicycle, bool>> where)
+        public IEnumerable<Bicycle> Get(Expression<Func<Bicycle, bool>> condition)
         {
-            return _bicycles.Single(where.Compile());
+            return _bicycles.Where(condition.Compile());
+        }
+        
+        public Bicycle Single(Expression<Func<Bicycle, bool>> condition)
+        {
+            return _bicycles.Single(condition.Compile());
+        }
+
+        public void Add(Bicycle bicycle)
+        {
+            bicycle.Id = _bicycles.Count + 1;
+            _bicycles.Add(bicycle);
         }
     }
 }
