@@ -10,7 +10,6 @@ namespace RentThatBike.Web.ServiceModel
     [Route("/bicycles/{Id}", "PUT")]
     public class PutBicycleRequest
     {
-        public int Id { get; set; }
         public Bicycle Bicycle { get; set; }
     }
 }
