@@ -27,7 +27,6 @@ namespace RentThatBike.Web
             container.RegisterValidators(typeof(AppHost).Assembly);
 
             container.RegisterAutoWired<BicyleRepository>();
-            container.RegisterAutoWired<BicycleValidator>();
         }
     }
 }

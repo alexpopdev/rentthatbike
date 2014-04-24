@@ -22,19 +22,19 @@ namespace RentThatBike.Web.ServiceInterface
             return BicyleRepository.Single(b => b.Id == request.Id);
         }
 
-        public Bicycle Post(PostBicycle request)
+        public Bicycle Post(Bicycle request)
         {
-            BicyleRepository.Add(request.Bicycle);
-            return request.Bicycle;
+            BicyleRepository.Add(request);
+            return request;
         }
 
-        public Bicycle Put(PutBicycle request)
+        public Bicycle Put(Bicycle request)
         {
             Bicycle bicycle = BicyleRepository.Single(b => b.Id == request.Id);
-            bicycle.Name = request.Bicycle.Name;
-            bicycle.Type = request.Bicycle.Type;
-            bicycle.Quantity = request.Bicycle.Quantity;
-            bicycle.RentPrice = request.Bicycle.RentPrice;
+            bicycle.Name = request.Name;
+            bicycle.Type = request.Type;
+            bicycle.Quantity = request.Quantity;
+            bicycle.RentPrice = request.RentPrice;
             return bicycle;
         }
     }
