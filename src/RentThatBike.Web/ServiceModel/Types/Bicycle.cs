@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using ServiceStack.ServiceHost;
 
 namespace RentThatBike.Web.ServiceModel.Types
 {
-    public class Bicycle
+    [Route("/bicycles", "POST")]
+    [Route("/bicycles/{Id}", "PUT")]
+    public class Bicycle : IReturn<Bicycle>
     {
         public int Id { get; set; }
 

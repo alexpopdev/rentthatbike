@@ -155,10 +155,6 @@
     <Compile Include="ServiceInterface\RentalsService.cs" />
     <Compile Include="ServiceModel\GetBicycles.cs" />
     <Compile Include="ServiceModel\GetCustomers.cs" />
-    <Compile Include="ServiceModel\PostBicycle.cs" />
-    <Compile Include="ServiceModel\PostBicycleValidator.cs" />
-    <Compile Include="ServiceModel\PutBicycle.cs" />
-    <Compile Include="ServiceModel\PutBicycleValidator.cs" />
     <Compile Include="ServiceModel\Types\Bicycle.cs" />
     <Compile Include="ServiceModel\Types\BicycleTypes.cs" />
     <Compile Include="ServiceModel\Types\BicycleValidator.cs" />
