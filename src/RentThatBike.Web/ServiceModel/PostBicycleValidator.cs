@@ -7,6 +7,8 @@ namespace RentThatBike.Web.ServiceModel
     {
         public PostBicycleValidator(BicycleValidator BicycleValidator)
         {
+            RuleFor(r => r.Bicycle).NotNull();
+
             RuleFor(r => r.Bicycle).SetValidator(BicycleValidator);
         }
     }

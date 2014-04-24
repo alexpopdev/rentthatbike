@@ -4,17 +4,11 @@
     var myAppModule = angular.module('myApp');
 
     myAppModule.factory('bicyclesService', ['$resource', function ($resource) {
-        var bicycleTypes = [
-              { id: 1, name: "Road Bike" },
-              { id: 2, name: "Mountain Bike" },
-              { id: 3, name: "Urban Bike" },
-              { id: 4, name: "Children Bike" }
-        ];
-
-        var bicycles = [];
+        var bicycleTypes = [{ id: 1, name: "Road Bike" }, { id: 2, name: "Mountain Bike" }, { id: 3, name: "Urban Bike" }, { id: 4, name: "Children Bike" }];
 
         var BicyclesResource = $resource('bicycles/:bicycleId', null,
             {
+                'add': { method: 'POST' },
                 'update': { method: 'PUT' }
             });
 
@@ -46,8 +40,7 @@
             },
             addBicycle: function (bicycle) {
                 updateBicycleTypeName(bicycle);
-                bicycle.id = bicycles.length + 1;
-                bicycles.push(bicycle);
+                return BicyclesResource.add(null, { bicycle: bicycle });
             },
             updateBicycle: function (bicycle) {
                 updateBicycleTypeName(bicycle);
