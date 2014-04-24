@@ -6,9 +6,8 @@
     myAppModule.factory('bicyclesService', ['$resource', function ($resource) {
         var bicycleTypes = [{ id: 1, name: "Road Bike" }, { id: 2, name: "Mountain Bike" }, { id: 3, name: "Urban Bike" }, { id: 4, name: "Children Bike" }];
 
-        var BicyclesResource = $resource('bicycles/:bicycleId', null,
+        var BicycleResource = $resource('bicycles/:bicycleId', null,
             {
-                'add': { method: 'POST' },
                 'update': { method: 'PUT' }
             });
 
@@ -22,29 +21,30 @@
 
         return {
             getBicycles: function () {
-                return BicyclesResource.query();
+                return BicycleResource.query();
             },
             getBicycle: function (bicycleId) {
-                return BicyclesResource.get({ bicycleId: bicycleId });
+                return BicycleResource.get({ bicycleId: bicycleId });
             },
             getBicycleTypes: function () {
                 return bicycleTypes;
             },
             createBicycle: function () {
-                return {
+                return new BicycleResource({
                     type: bicycleTypes[0].id,
                     typeName: bicycleTypes[0].name,
                     quantity: 1,
                     rentPrice: 10
-                };
+                });
             },
             addBicycle: function (bicycle) {
                 updateBicycleTypeName(bicycle);
-                return BicyclesResource.add(null, { bicycle: bicycle });
+                bicycle.$save();
+                return bicycle;
             },
             updateBicycle: function (bicycle) {
                 updateBicycleTypeName(bicycle);
-                return BicyclesResource.update({ bicycleId: bicycle.id }, { bicycle: bicycle });
+                return BicycleResource.update({ bicycleId: bicycle.id }, bicycle);
             }
         };
     }]);
