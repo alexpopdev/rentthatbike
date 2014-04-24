@@ -1,7 +1,7 @@
 ﻿(function () {
     "use strict";
 
-    var myAppModule = angular.module('myApp', ['ngRoute', 'ui.bootstrap']);
+    var myAppModule = angular.module('myApp', ['ngRoute', 'ngResource', 'ui.bootstrap']);
 
     myAppModule.config(['$provide', function ($provide) {
         $provide.decorator('$exceptionHandler', ['$delegate', function ($delegate) {

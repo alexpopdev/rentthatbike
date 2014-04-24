@@ -12,26 +12,32 @@
                 var originalBicyle = null;
 
                 if ($scope.isNew) {
-                    $scope.bicycle = bicyclesService.createBicycle();
                     $scope.formTitle = "Add new bicycle";
+                    $scope.bicycle = bicyclesService.createBicycle();
                 } else {
-                    originalBicyle = bicyclesService.getBicycle($routeParams.bicycleId);
-                    $scope.bicycle = angular.copy(originalBicyle);
                     $scope.formTitle = "Update bicycle";
+                    originalBicyle = bicyclesService.getBicycle($routeParams.bicycleId);
+                    originalBicyle.$promise.then(function () {
+                        $scope.bicycle = angular.copy(originalBicyle);
+                    });
+
+
                 }
 
                 $scope.submit = function () {
                     if ($scope.isNew) {
                         bicyclesService.addBicycle($scope.bicycle);
+                        $location.path('/bicycles');
                     } else {
                         angular.copy($scope.bicycle, originalBicyle);
-                        bicyclesService.updateBicycle(originalBicyle);
+                        var updatedBicycle = bicyclesService.updateBicycle(originalBicyle);
+                        updatedBicycle.$promise.then(function () {
+                            $location.path('/bicycles');
+                        });
                     }
-
-                    $location.path('/bicycles');
                 };
 
-                $scope.cancel = function() {
+                $scope.cancel = function () {
                     $location.path('/bicycles');
                 };
             }

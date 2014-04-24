@@ -4,12 +4,7 @@
     var myAppModule = angular.module('myApp');
 
     myAppModule.factory('customersService', function () {
-        var customers = [
-                    { id: 1, firstName: "Jane", lastName: "Donaldson", email: "jd@test.com", phone: "83782" },
-                    { id: 2, firstName: "Kevin", lastName: "Evans", email: "ke@test.com", phone: null },
-                    { id: 3, firstName: "Max", lastName: "Donald", email: "md@test.com", phone: "27423" },
-                    { id: 4, firstName: "Natalie", lastName: "Hunter", email: "nh@test.com", phone: "56645" }
-        ];
+        var customers = [];
 
         return {
             getCustomers: function () {

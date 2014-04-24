@@ -3,7 +3,7 @@
 
     var myAppModule = angular.module('myApp');
 
-    myAppModule.factory('bicyclesService', function () {
+    myAppModule.factory('bicyclesService', ['$resource', function ($resource) {
         var bicycleTypes = [
               { id: 1, name: "Road Bike" },
               { id: 2, name: "Mountain Bike" },
@@ -11,12 +11,12 @@
               { id: 4, name: "Children Bike" }
         ];
 
-        var bicycles = [
-                    { id: 1, name: "Very fast bike", type: 1, typeName: "Road Bike", quantity: 5, rentPrice: 15 },
-                    { id: 2, name: "Very springy bike", type: 2, typeName: "Mountain Bike", quantity: 20, rentPrice: 17 },
-                    { id: 3, name: "Very classy bike", type: 3, typeName: "Urban Bike", quantity: 20, rentPrice: 14 },
-                    { id: 4, name: "Very colorful bike", type: 4, typeName: "Children Bike", quantity: 20, rentPrice: 9 }
-        ];
+        var bicycles = [];
+
+        var BicyclesResource = $resource('bicycles/:bicycleId', null,
+            {
+                'update': { method: 'PUT' }
+            });
 
         var updateBicycleTypeName = function (bicycle) {
             angular.forEach(bicycleTypes, function (bicycleType) {
@@ -28,16 +28,10 @@
 
         return {
             getBicycles: function () {
-                return bicycles;
+                return BicyclesResource.query();
             },
-            getBicycle: function (bicyleId) {
-                var existingBicycle = null;
-                angular.forEach(bicycles, function (bicycle) {
-                    if (bicycle.id == bicyleId) {
-                        existingBicycle = bicycle;
-                    }
-                });
-                return existingBicycle;
+            getBicycle: function (bicycleId) {
+                return BicyclesResource.get({ bicycleId: bicycleId });
             },
             getBicycleTypes: function () {
                 return bicycleTypes;
@@ -57,7 +51,8 @@
             },
             updateBicycle: function (bicycle) {
                 updateBicycleTypeName(bicycle);
+                return BicyclesResource.update({ bicycleId: bicycle.id }, { bicycle: bicycle });
             }
         };
-    });
+    }]);
 })();
