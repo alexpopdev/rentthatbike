@@ -3,9 +3,9 @@ using ServiceStack.FluentValidation;
 
 namespace RentThatBike.Web.ServiceModel
 {
-    public class PostBicycleRequestValidator : AbstractValidator<PostBicycleRequest>
+    public class PostBicycleValidator : AbstractValidator<PostBicycle>
     {
-        public PostBicycleRequestValidator(BicycleValidator BicycleValidator)
+        public PostBicycleValidator(BicycleValidator BicycleValidator)
         {
             RuleFor(r => r.Bicycle).SetValidator(BicycleValidator);
         }
