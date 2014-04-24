@@ -3,9 +3,9 @@ using ServiceStack.FluentValidation;
 
 namespace RentThatBike.Web.ServiceModel
 {
-    public class PutBicycleRequestValidator : AbstractValidator<PutBicycleRequest>
+    public class PutBicycleValidator : AbstractValidator<PutBicycle>
     {
-        public PutBicycleRequestValidator(BicycleValidator bicycleValidator)
+        public PutBicycleValidator(BicycleValidator bicycleValidator)
         {
             RuleFor(r => r.Id).Must((r,id) => id == r.Bicycle.Id).WithMessage("There is a mismatch between the bicycle id from the URL and the one from the request body !");
             RuleFor(r => r.Bicycle).SetValidator(bicycleValidator);

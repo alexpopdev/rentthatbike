@@ -153,19 +153,19 @@
     <Compile Include="ServiceInterface\BicyclesService.cs" />
     <Compile Include="ServiceInterface\CustomersServices.cs" />
     <Compile Include="ServiceInterface\RentalsService.cs" />
-    <Compile Include="ServiceModel\GetBicyclesRequest.cs" />
-    <Compile Include="ServiceModel\GetCustomersRequest.cs" />
-    <Compile Include="ServiceModel\PostBicycleRequest.cs" />
-    <Compile Include="ServiceModel\PostBicycleRequestValidator.cs" />
-    <Compile Include="ServiceModel\PutBicycleRequest.cs" />
-    <Compile Include="ServiceModel\PutBicycleRequestValidator.cs" />
+    <Compile Include="ServiceModel\GetBicycles.cs" />
+    <Compile Include="ServiceModel\GetCustomers.cs" />
+    <Compile Include="ServiceModel\PostBicycle.cs" />
+    <Compile Include="ServiceModel\PostBicycleValidator.cs" />
+    <Compile Include="ServiceModel\PutBicycle.cs" />
+    <Compile Include="ServiceModel\PutBicycleValidator.cs" />
     <Compile Include="ServiceModel\Types\Bicycle.cs" />
     <Compile Include="ServiceModel\Types\BicycleTypes.cs" />
     <Compile Include="ServiceModel\Types\BicycleValidator.cs" />
     <Compile Include="ServiceModel\Types\BicyleRepository.cs" />
     <Compile Include="ServiceModel\Types\Customer.cs" />
-    <Compile Include="ServiceModel\GetRentalsRequest.cs" />
-    <Compile Include="ServiceModel\GetBicycleRequest.cs" />
+    <Compile Include="ServiceModel\GetRentals.cs" />
+    <Compile Include="ServiceModel\GetBicycle.cs" />
     <Compile Include="ServiceModel\Types\Rental.cs" />
   </ItemGroup>
   <ItemGroup />

@@ -8,7 +8,7 @@ using ServiceStack.ServiceHost;
 namespace RentThatBike.Web.ServiceModel
 {
     [Route("/bicycles/{Id}", "PUT")]
-    public class PutBicycleRequest
+    public class PutBicycle
     {
         public int Id { get; set; }
         public Bicycle Bicycle { get; set; }
