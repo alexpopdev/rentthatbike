@@ -5,7 +5,7 @@ using ServiceStack.ServiceHost;
 namespace RentThatBike.Web.ServiceModel
 {
     [Route("/bicycles", "GET")]
-    public class GetBicycles : IReturn<List<Bicycle>>
+    public class GetBicyclesRequest : IReturn<List<Bicycle>>
     {
     }
 }

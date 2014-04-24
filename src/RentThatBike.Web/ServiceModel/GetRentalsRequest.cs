@@ -1,6 +1,6 @@
 ﻿namespace RentThatBike.Web.ServiceModel
 {
-    public class GetRentals
+    public class GetRentalsRequest
     {
     }
 }

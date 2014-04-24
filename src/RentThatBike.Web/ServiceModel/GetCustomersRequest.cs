@@ -5,7 +5,7 @@ using System.Web;
 
 namespace RentThatBike.Web.ServiceModel
 {
-    public class GetCustomers
+    public class GetCustomersRequest
     {
     }
 }
