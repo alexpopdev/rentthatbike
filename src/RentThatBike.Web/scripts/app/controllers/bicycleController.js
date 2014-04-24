@@ -24,10 +24,11 @@
 
             $scope.submit = function () {
                 if ($scope.isNew) {
-                    var addedBicycle = bicyclesService.addBicycle($scope.bicycle);
-                    addedBicycle.$promise.then(function () {
-                        $location.path('/bicycles');
-                    });
+                    bicyclesService
+                        .addBicycle($scope.bicycle)
+                        .then(function () {
+                            $location.path('/bicycles');
+                        });
 
                 } else {
                     angular.copy($scope.bicycle, originalBicyle);

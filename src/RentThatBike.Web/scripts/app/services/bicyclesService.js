@@ -39,8 +39,7 @@
             },
             addBicycle: function (bicycle) {
                 updateBicycleTypeName(bicycle);
-                bicycle.$save();
-                return bicycle;
+                return bicycle.$save();
             },
             updateBicycle: function (bicycle) {
                 updateBicycleTypeName(bicycle);
