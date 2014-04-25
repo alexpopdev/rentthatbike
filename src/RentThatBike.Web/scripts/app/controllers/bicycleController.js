@@ -32,8 +32,8 @@
 
                 } else {
                     angular.copy($scope.bicycle, originalBicyle);
-                    var updatedBicycle = bicyclesService.updateBicycle(originalBicyle);
-                    updatedBicycle.$promise.then(function () {
+                    originalBicyle = bicyclesService.updateBicycle(originalBicyle);
+                    originalBicyle.$promise.then(function () {
                         $location.path('/bicycles');
                     });
                 }
