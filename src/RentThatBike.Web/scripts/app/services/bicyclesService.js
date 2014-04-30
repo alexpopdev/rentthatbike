@@ -6,7 +6,7 @@
     myAppModule.factory('bicyclesService', ['$resource', function ($resource) {
         var bicycleTypes = [{ id: 1, name: "Road Bike" }, { id: 2, name: "Mountain Bike" }, { id: 3, name: "Urban Bike" }, { id: 4, name: "Children Bike" }];
 
-        var BicycleResource = $resource('bicycles/:bicycleId', null,
+        var BicycleResource = $resource('api/bicycles/:bicycleId', null,
             {
                 'update': { method: 'PUT' }
             });

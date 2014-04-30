@@ -16,7 +16,7 @@ namespace RentThatBike.Web
         {
             new AppHost().Init();
 
-            //AreaRegistration.RegisterAllAreas();
+            AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
     }
