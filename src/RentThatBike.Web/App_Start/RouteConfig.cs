@@ -8,14 +8,9 @@ namespace RentThatBike.Web
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-            routes.IgnoreRoute("content/{*pathInfo}");
-            routes.IgnoreRoute("fonts/{*pathInfo}");
-            routes.IgnoreRoute("scripts/{*pathInfo}");
-
             routes.IgnoreRoute("api/{*pathInfo}");
-            routes.IgnoreRoute("rentals/{*pathInfo}");
-            routes.IgnoreRoute("customers/{*pathInfo}");
-            routes.IgnoreRoute("bicycles/{*pathInfo}");
+            routes.IgnoreRoute("content/{*pathInfo}");
+            routes.IgnoreRoute("scripts/{*pathInfo}");
 
             routes.MapRoute(
                 name: "Default",

@@ -13,7 +13,7 @@
     }]);
 
     myAppModule.config([
-        '$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+        '$routeProvider', function ($routeProvider) {
             $routeProvider.when('/', { templateUrl: 'scripts/app/views/default.html' });
             $routeProvider.when('/bicycles', { templateUrl: 'scripts/app/views/bicyclesIndex.html', controller: 'BicyclesController' });
             $routeProvider.when('/bicycles/new', { templateUrl: 'Scripts/app/views/bicyclesEditor.html', controller: 'BicycleController' });
@@ -24,8 +24,6 @@
             $routeProvider.when('/rentals', { templateUrl: 'scripts/app/views/rentalsIndex.html', controller: 'RentalsController' });
             $routeProvider.when('/rentals/new', { templateUrl: 'Scripts/app/views/rentalsEditor.html', controller: 'RentalController' });
             $routeProvider.when('/rentals/:rentalId/edit', { templateUrl: 'Scripts/app/views/rentalsEditor.html', controller: 'RentalController' });
-
-            $locationProvider.html5Mode(true);
         }
     ]);
 
