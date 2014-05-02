@@ -194,7 +194,9 @@
     <Content Include="scripts\ui-bootstrap-0.10.0.min.js" />
     <Content Include="scripts\ui-bootstrap-tpls-0.10.0.js" />
     <Content Include="scripts\ui-bootstrap-tpls-0.10.0.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppHost.cs" />

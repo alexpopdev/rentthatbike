@@ -13,10 +13,6 @@ namespace RentThatBike.Web
             routes.IgnoreRoute("scripts/{*pathInfo}");
 
             routes.IgnoreRoute("api/{*pathInfo}");
-            routes.IgnoreRoute("rentals/{*pathInfo}");
-            routes.IgnoreRoute("customers/{*pathInfo}");
-            routes.IgnoreRoute("bicycles/{*pathInfo}");
-
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
