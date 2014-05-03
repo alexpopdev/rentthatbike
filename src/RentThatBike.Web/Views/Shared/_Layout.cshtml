@@ -2,9 +2,8 @@
 <html ng-app="myApp">
 <head>
     <meta charset="utf-8" />
-    <title>Chapter4 Example1 - Rent That Bike!</title>
-    <link href="content/bootstrap.css" rel="stylesheet" />
-    <link href="content/app/app.css" rel="stylesheet" />
+    <title>Chapter4 Example3 - Rent That Bike!</title>
+    @Styles.Render("~/Content/css")
 </head>
 <body ng-controller="ApplicationController">
     <header>
@@ -35,22 +34,9 @@
     <section>
         @RenderBody()
     </section>
-    <script src="~/scripts/jquery-1.9.0.js"></script>
-    <script src="~/scripts/moment.js"></script>
-    <script src="~/scripts/angular.js"></script>
-    <script src="~/scripts/angular-route.js"></script>
-    <script src="~/scripts/angular-resource.js"></script>
-    <script src="~/scripts/ui-bootstrap-tpls-0.10.0.js"></script>
-    <script src="~/scripts/app/app.js"></script>
-    <script src="~/scripts/app/services/bicyclesService.js"></script>
-    <script src="~/scripts/app/services/customersService.js"></script>
-    <script src="~/scripts/app/services/rentalsService.js"></script>
-    <script src="~/scripts/app/controllers/applicationController.js"></script>
-    <script src="~/scripts/app/controllers/bicyclesController.js"></script>
-    <script src="~/scripts/app/controllers/bicycleController.js"></script>
-    <script src="~/scripts/app/controllers/customersController.js"></script>
-    <script src="~/scripts/app/controllers/customerController.js"></script>
-    <script src="~/scripts/app/controllers/rentalsController.js"></script>
-    <script src="~/scripts/app/controllers/rentalController.js"></script>
+    @Scripts.Render("~/bundles/basejs")
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/app")
+    @RenderSection("scripts", required: false)
 </body>
 </html>
