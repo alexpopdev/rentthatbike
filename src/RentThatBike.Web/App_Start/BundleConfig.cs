@@ -9,26 +9,26 @@ namespace RentThatBike.Web
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/basejs").Include(
-                        "~/Scripts/jquery-{version}.js",
-                        "~/Scripts/moment.js"));
+                        "~/scripts/jquery-{version}.js",
+                        "~/scripts/moment.js"));
 
           
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
-                      "~/Scripts/angular.js",
-                      "~/Scripts/angular-route.js",
-                      "~/Scripts/angular-resource.js",
-                      "~/Scripts/ui-bootstrap-{version}.js"));
+                      "~/scripts/angular.js",
+                      "~/scripts/angular-route.js",
+                      "~/scripts/angular-resource.js",
+                      "~/scripts/ui-bootstrap-{version}.js"));
             
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
-                      "~/Scripts/app/app.js",
-                      //"~/Scripts/app/filters/*.js",
-                      //"~/Scripts/app/directives/*.js",
-                      "~/Scripts/app/services/*.js",
-                      "~/Scripts/app/controllers/*.js"));
+                      "~/scripts/app/app.js",
+                      //"~/scripts/app/filters/*.js",
+                      //"~/scripts/app/directives/*.js",
+                      "~/scripts/app/services/*.js",
+                      "~/scripts/app/controllers/*.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/app/app.css"));
+                      "~/content/bootstrap.css",
+                      "~/content/app/app.css"));
 
             BundleTable.EnableOptimizations = false;
             
