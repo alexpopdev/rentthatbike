@@ -2,7 +2,7 @@
 <html ng-app="myApp">
 <head>
     <meta charset="utf-8" />
-    <title>Chapter4 Example4 - Rent That Bike!</title>
+    <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
 </head>
 <body ng-controller="ApplicationController">
@@ -25,7 +25,10 @@
                     <ul class="nav navbar-nav">
                         <li><a href="#/rentals">Rentals</a></li>
                         <li><a href="#/customers">Customers</a></li>
-                        <li><a href="#/bicycles">@ViewBag.BicyclesCount Bicycles</a></li>
+                        <li><a href="#/bicycles">Bicycles</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">@ViewBag.AuthUserSession.DisplayName</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
