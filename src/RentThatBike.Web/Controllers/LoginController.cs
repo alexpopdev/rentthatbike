@@ -19,11 +19,12 @@ namespace RentThatBike.Web.Controllers
         public AuthService AuthService { get; set; }
         //
         // GET: /login/
-        public ActionResult Index()
+        public ActionResult Index(string redirect)
         {
-            return View();
+            return View(new LoginData{Redirect = redirect});
         }
 
+        [HttpPost]
         public ActionResult LogIn(LoginData loginData)
         {
             if (!ModelState.IsValid)
