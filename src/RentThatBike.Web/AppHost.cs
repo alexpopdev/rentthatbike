@@ -44,8 +44,7 @@ namespace RentThatBike.Web
             Plugins.Add(new AuthFeature(
             () => new AuthUserSession(),
             new IAuthProvider[] {
-                    new CredentialsAuthProvider(),
-                    new BasicAuthProvider(),
+                    new CredentialsAuthProvider()
                 }));
 
             var userAuthRepository = new InMemoryAuthRepository();

@@ -19,6 +19,7 @@ namespace RentThatBike.Web.Controllers
         public AuthService AuthService { get; set; }
         //
         // GET: /login/
+        [HttpGet]
         public ActionResult Index(string redirect)
         {
             return View(new LoginData{Redirect = redirect});
