@@ -14,7 +14,7 @@ using ServiceStack.WebHost.Endpoints;
 
 namespace RentThatBike.Web.Controllers
 {
-    public class LoginController : ServiceStackController<AuthUserSession>
+    public class LoginController : Controller
     {
         public AuthService AuthService { get; set; }
         //
