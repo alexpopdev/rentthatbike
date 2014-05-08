@@ -28,7 +28,7 @@
                         <li><a href="#/bicycles">Bicycles</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">@ViewBag.AuthUserSession.DisplayName</a></li>
+                        <li><a href="#">{{serverSideData.userDisplayName}}</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
@@ -40,6 +40,15 @@
     @Scripts.Render("~/bundles/basejs")
     @Scripts.Render("~/bundles/angular")
     @Scripts.Render("~/bundles/app")
+    <script type="text/javascript">
+        (function() {
+            "use strict";
+
+            var myAppModule = angular.module('myApp');
+
+            myAppModule.constant("serverSideData", @Html.Raw(ViewBag.ServerSideDataAsJson) );
+        })();
+    </script>
     @RenderSection("scripts", required: false)
 </body>
 </html>
