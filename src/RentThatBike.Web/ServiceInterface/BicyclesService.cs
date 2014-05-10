@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
-using System.Web;
-using System.Web.Services.Protocols;
 using RentThatBike.Web.ServiceModel;
 using RentThatBike.Web.ServiceModel.Types;
 using ServiceStack.ServiceHost;
@@ -14,15 +12,11 @@ namespace RentThatBike.Web.ServiceInterface
     [Authenticate]
     public class BicyclesService : IService
     {
-        public BicyclesService()
-        {
-            Thread.Sleep(2000);
-        }
-
         public BicyleRepository BicyleRepository { get; set; }
 
         public List<Bicycle> Get(GetBicycles request)
         {
+            throw new Exception("A really unexpected exception!");
             return BicyleRepository.GetAll().ToList();
         }
 

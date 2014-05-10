@@ -159,6 +159,7 @@
     <Content Include="scripts\app\controllers\customersController.js" />
     <Content Include="scripts\app\controllers\bicyclesController.js" />
     <Content Include="scripts\app\controllers\applicationController.js" />
+    <Content Include="scripts\app\services\httpInterceptor.js" />
     <Content Include="scripts\app\services\rentalsService.js" />
     <Content Include="scripts\app\services\customersService.js" />
     <Content Include="scripts\app\services\bicyclesService.js" />
