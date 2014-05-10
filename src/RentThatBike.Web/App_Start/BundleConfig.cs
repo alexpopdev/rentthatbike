@@ -17,7 +17,9 @@ namespace RentThatBike.Web
                       "~/scripts/angular.js",
                       "~/scripts/angular-route.js",
                       "~/scripts/angular-resource.js",
-                      "~/scripts/ui-bootstrap-{version}.js"));
+                      "~/scripts/ui-bootstrap-{version}.js",
+                      "~/scripts/spin.js",
+                      "~/scripts/angular-spinner.js"));
             
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
                       "~/scripts/app/app.js",
