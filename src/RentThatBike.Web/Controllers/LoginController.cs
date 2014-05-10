@@ -22,7 +22,12 @@ namespace RentThatBike.Web.Controllers
         [HttpGet]
         public ActionResult Index(string redirect)
         {
-            return View(new LoginData{Redirect = redirect});
+            var loginData = new LoginData{Redirect = redirect};
+
+            //save the default login details for now
+            loginData.EmailAddress = "admin@rentthatbike.com";
+            loginData.Password = "admin";
+            return View(loginData);
         }
 
         [HttpPost]
