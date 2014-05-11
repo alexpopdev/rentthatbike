@@ -7,6 +7,18 @@
 
     function httpInterceptor($q, usSpinnerService) {
         var service = {
+            'request': function (config) {
+                usSpinnerService.spin("mainSpinner");
+                return config || $q.when(config);
+            },
+            'requestError': function (rejection) {
+                usSpinnerService.stop("mainSpinner");
+                return $q.reject(rejection);
+            },
+            'response': function (response) {
+                usSpinnerService.stop("mainSpinner");
+                return response || $q.when(response);
+            },
             'responseError': function (rejection) {
                 var hasErrorMessage = false;
                 var errorMessage;

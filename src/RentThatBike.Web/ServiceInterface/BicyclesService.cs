@@ -12,11 +12,15 @@ namespace RentThatBike.Web.ServiceInterface
     [Authenticate]
     public class BicyclesService : IService
     {
+        public BicyclesService()
+        {
+            Thread.Sleep(1500);
+        }
+
         public BicyleRepository BicyleRepository { get; set; }
 
         public List<Bicycle> Get(GetBicycles request)
         {
-            throw new Exception("A really unexpected exception!");
             return BicyleRepository.GetAll().ToList();
         }
 

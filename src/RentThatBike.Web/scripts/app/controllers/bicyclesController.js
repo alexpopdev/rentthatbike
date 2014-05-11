@@ -3,14 +3,9 @@
 
     var myAppModule = angular.module('myApp');
 
-    myAppModule.controller('BicyclesController', ['$scope', 'bicyclesService', 'usSpinnerService',
-            function ($scope, bicyclesService, usSpinnerService) {
-                usSpinnerService.spin("mainSpinner");
+    myAppModule.controller('BicyclesController', ['$scope', 'bicyclesService',
+            function ($scope, bicyclesService) {
                 $scope.bicycles = bicyclesService.getBicycles();
-
-                $scope.bicycles.$promise.then(function () {
-                    usSpinnerService.stop("mainSpinner");
-                });
             }
     ]);
 })();
