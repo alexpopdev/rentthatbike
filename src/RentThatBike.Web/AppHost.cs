@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Reflection;
 using System.Web;
@@ -9,8 +10,13 @@ using RentThatBike.Web.ServiceModel;
 using RentThatBike.Web.ServiceModel.Types;
 using ServiceStack.CacheAccess;
 using ServiceStack.CacheAccess.Providers;
+using ServiceStack.Common.Utils;
 using ServiceStack.Common.Web;
+using ServiceStack.Configuration;
+using ServiceStack.MiniProfiler;
+using ServiceStack.MiniProfiler.Data;
 using ServiceStack.Mvc;
+using ServiceStack.OrmLite;
 using ServiceStack.ServiceInterface;
 using ServiceStack.ServiceInterface.Auth;
 using ServiceStack.ServiceInterface.Validation;
@@ -47,10 +53,23 @@ namespace RentThatBike.Web
                     new CredentialsAuthProvider()
                 }));
 
-            var userAuthRepository = new InMemoryAuthRepository();
-            userAuthRepository.CreateUserAuth(new UserAuth { Email = "admin@rentthatbike.com", DisplayName= "Admin User"}, "admin");
+            container.Register<IDbConnectionFactory>(
+                new OrmLiteConnectionFactory(
+                    ConfigurationManager.ConnectionStrings["SqlLiteConnection"].ConnectionString.MapAbsolutePath(), 
+                    SqliteDialect.Provider));
+            
+            container.Register<IUserAuthRepository>(c =>
+                new OrmLiteAuthRepository(c.Resolve<IDbConnectionFactory>()));
+
+            var userAuthRepository = (OrmLiteAuthRepository)container.Resolve<IUserAuthRepository>();
+            userAuthRepository.CreateMissingTables();
+            if (userAuthRepository.GetUserAuthByUserName("admin@rentthatbike.com") == null)
+            {
+                userAuthRepository.CreateUserAuth(
+                    new UserAuth {Email = "admin@rentthatbike.com", DisplayName = "Admin User"}, "admin");
+            }
+
             container.Register<IUserAuthRepository>(userAuthRepository);
- 
         }
 
         protected virtual EndpointHostConfig CreateEndpointHostConfig()
