@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using ServiceStack.DataAnnotations;
 using ServiceStack.ServiceHost;
 
 namespace RentThatBike.Web.ServiceModel.Types
@@ -10,8 +11,10 @@ namespace RentThatBike.Web.ServiceModel.Types
     [Route("/bicycles/{Id}", "PUT")]
     public class Bicycle : IReturn<Bicycle>
     {
+        [AutoIncrement]
         public int Id { get; set; }
 
+        [Index(Unique = true)]
         public string Name { get; set; }
 
         public BicycleTypes Type { get; set; }

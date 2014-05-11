@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Linq;
 using System.Reflection;
 using System.Web;
@@ -25,7 +26,7 @@ using ServiceStack.WebHost.Endpoints;
 
 namespace RentThatBike.Web
 {
-    public class AppHost: AppHostBase
+    public class AppHost : AppHostBase
     {
         public AppHost()
             : base("Rent That Bike! Web services", typeof(AppHost).Assembly)
@@ -36,7 +37,7 @@ namespace RentThatBike.Web
         {
             //ASP.NET MVC integration
             ControllerBuilder.Current.SetControllerFactory(new FunqControllerFactory(container));
-            
+
             SetConfig(CreateEndpointHostConfig());
 
             JsConfig.EmitCamelCaseNames = true;
@@ -45,7 +46,6 @@ namespace RentThatBike.Web
             container.RegisterValidators(typeof(AppHost).Assembly);
 
             container.Register<ICacheClient>(new MemoryCacheClient());
-            container.RegisterAutoWired<BicyleRepository>();
 
             Plugins.Add(new AuthFeature(
             () => new AuthUserSession(),
@@ -55,9 +55,11 @@ namespace RentThatBike.Web
 
             container.Register<IDbConnectionFactory>(
                 new OrmLiteConnectionFactory(
-                    ConfigurationManager.ConnectionStrings["SqlLiteConnection"].ConnectionString.MapAbsolutePath(), 
+                    ConfigurationManager.ConnectionStrings["SqlLiteConnection"].ConnectionString.MapAbsolutePath(),
                     SqliteDialect.Provider));
-            
+
+            container.RegisterAutoWired<BicyleRepository>().ReusedWithin(ReuseScope.Request);
+
             container.Register<IUserAuthRepository>(c =>
                 new OrmLiteAuthRepository(c.Resolve<IDbConnectionFactory>()));
 
@@ -66,7 +68,27 @@ namespace RentThatBike.Web
             if (userAuthRepository.GetUserAuthByUserName("admin@rentthatbike.com") == null)
             {
                 userAuthRepository.CreateUserAuth(
-                    new UserAuth {Email = "admin@rentthatbike.com", DisplayName = "Admin User"}, "admin");
+                    new UserAuth { Email = "admin@rentthatbike.com", DisplayName = "Admin User" }, "admin");
+            }
+           
+            InitializeDatabase(container);
+        }
+
+        private void InitializeDatabase(Container container)
+        {
+            using (IDbConnection db = container.Resolve<IDbConnectionFactory>().OpenDbConnection())
+            {
+                db.CreateTableIfNotExists<Bicycle>();
+                if (db.GetScalar<int>("SELECT COUNT(*) FROM Bicycle") == 0)
+                {
+                    db.InsertAll(
+                        new[] { 
+                        new Bicycle { Id = 1, Name = "Very fast bike", Type = BicycleTypes.RoadBike, Quantity = 5, RentPrice = 15 },
+                        new Bicycle { Id = 2, Name = "Very springy bike", Type = BicycleTypes.MountainBike, Quantity = 20, RentPrice = 17 },
+                        new Bicycle { Id = 3, Name = "Very classy bike", Type = BicycleTypes.UrbanBike, Quantity = 20, RentPrice = 14 },
+                        new Bicycle { Id = 4, Name = "Very colorful bike", Type = BicycleTypes.ChildrenBike, Quantity = 20, RentPrice = 9 }
+                    });
+                }
             }
         }
 
