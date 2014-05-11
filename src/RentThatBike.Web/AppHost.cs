@@ -68,8 +68,6 @@ namespace RentThatBike.Web
                 userAuthRepository.CreateUserAuth(
                     new UserAuth {Email = "admin@rentthatbike.com", DisplayName = "Admin User"}, "admin");
             }
-
-            container.Register<IUserAuthRepository>(userAuthRepository);
         }
 
         protected virtual EndpointHostConfig CreateEndpointHostConfig()
