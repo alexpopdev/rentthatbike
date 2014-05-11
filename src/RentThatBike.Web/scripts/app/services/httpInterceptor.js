@@ -17,7 +17,7 @@
                 }
 
                 if (hasErrorMessage) {
-                    alert("Http response error:" + errorMessage);
+                    alert("Http response error: " + errorMessage);
                     usSpinnerService.stop("mainSpinner");
                 }
 
