@@ -16,12 +16,12 @@ namespace RentThatBike.Web.ServiceModel.Types
         {
             get { return _db ?? (_db = DbConnectionFactory.Open()); }
         }
-        public IEnumerable<Bicycle> GetAll()
+        public List<Bicycle> GetAll()
         {
             return Db.Select<Bicycle>();
         }
 
-        public IEnumerable<Bicycle> Get(Expression<Func<Bicycle, bool>> condition)
+        public List<Bicycle> Get(Expression<Func<Bicycle, bool>> condition)
         {
             return Db.Select<Bicycle>(condition);
         }

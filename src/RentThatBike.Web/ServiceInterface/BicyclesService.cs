@@ -16,7 +16,7 @@ namespace RentThatBike.Web.ServiceInterface
 
         public List<Bicycle> Get(GetBicycles request)
         {
-            return BicyleRepository.GetAll().ToList();
+            return BicyleRepository.GetAll();
         }
 
         public Bicycle Get(GetBicycle request)
