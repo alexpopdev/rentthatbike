@@ -37,6 +37,17 @@ namespace RentThatBike.Web.ServiceModel.Types
             bicycle.Id = (int)Db.GetLastInsertId();
         }
 
+        public Bicycle Update(Bicycle sourceBicycle)
+        {
+            Bicycle bicycle = Single(b => b.Id == sourceBicycle.Id);
+            bicycle.Name = sourceBicycle.Name;
+            bicycle.Type = sourceBicycle.Type;
+            bicycle.Quantity = sourceBicycle.Quantity;
+            bicycle.RentPrice = sourceBicycle.RentPrice;
+            Db.Update(bicycle);
+            return bicycle;
+        }
+
         public void Dispose()
         {
             if (_db != null)
