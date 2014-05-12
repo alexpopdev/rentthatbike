@@ -79,7 +79,7 @@ namespace RentThatBike.Web
             using (IDbConnection db = container.Resolve<IDbConnectionFactory>().OpenDbConnection())
             {
                 db.CreateTableIfNotExists<Bicycle>();
-                if (db.GetScalar<int>("SELECT COUNT(*) FROM Bicycle") == 0)
+                if (db.SqlScalar<int>("SELECT COUNT(*) FROM Bicycle") == 0)
                 {
                     db.InsertAll(
                         new[] { 
