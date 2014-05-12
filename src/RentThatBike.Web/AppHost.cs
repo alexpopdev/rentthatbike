@@ -83,10 +83,10 @@ namespace RentThatBike.Web
                 {
                     db.InsertAll(
                         new[] { 
-                        new Bicycle { Id = 1, Name = "Very fast bike", Type = BicycleTypes.RoadBike, Quantity = 5, RentPrice = 15 },
-                        new Bicycle { Id = 2, Name = "Very springy bike", Type = BicycleTypes.MountainBike, Quantity = 20, RentPrice = 17 },
-                        new Bicycle { Id = 3, Name = "Very classy bike", Type = BicycleTypes.UrbanBike, Quantity = 20, RentPrice = 14 },
-                        new Bicycle { Id = 4, Name = "Very colorful bike", Type = BicycleTypes.ChildrenBike, Quantity = 20, RentPrice = 9 }
+                        new Bicycle { Name = "Very fast bike", Type = BicycleTypes.RoadBike, Quantity = 5, RentPrice = 15 },
+                        new Bicycle { Name = "Very springy bike", Type = BicycleTypes.MountainBike, Quantity = 20, RentPrice = 17 },
+                        new Bicycle { Name = "Very classy bike", Type = BicycleTypes.UrbanBike, Quantity = 20, RentPrice = 14 },
+                        new Bicycle { Name = "Very colorful bike", Type = BicycleTypes.ChildrenBike, Quantity = 20, RentPrice = 9 }
                     });
                 }
             }
