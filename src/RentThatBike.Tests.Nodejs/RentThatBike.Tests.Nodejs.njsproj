@@ -34,7 +34,6 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="app.js" />
     <Compile Include="karma.conf.js" />
     <Compile Include="tests\unit\controllers\bicyclesControllerSpec.js" />
     <Content Include="package.json" />
