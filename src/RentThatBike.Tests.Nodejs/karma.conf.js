@@ -16,15 +16,15 @@ module.exports = function(config) {
     // list of files / patterns to load in the browserS
     files: [
         //external files
-         '../RentThatBike.Web/scripts/angular.js',
-         '../RentThatBike.Web/scripts/angular-mocks.js',
-         '../RentThatBike.Web/scripts/angular-route.js',
-         '../RentThatBike.Web/scripts/angular-resource.js',
-         '../RentThatBike.Web/scripts/angular-spinner.js',
-         '../RentThatBike.Web/scripts/ui-bootstrap-*.js',
+         'scripts/angular.js',
+         'scripts/angular-mocks.js',
+         'scripts/angular-route.js',
+         'scripts/angular-resource.js',
+         'scripts/angular-spinner.js',
+         'scripts/ui-bootstrap-*.js',
 
        //App code 
-      '../RentThatBike.Web/scripts/app/**/*.js',
+      'scripts/app/**/*.js',
 
       //Tests
       'tests/unit/**/*Spec.js'      
