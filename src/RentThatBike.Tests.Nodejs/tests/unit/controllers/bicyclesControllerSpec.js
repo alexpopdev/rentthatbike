@@ -9,10 +9,24 @@ describe("bicyclesController", function () {
         expect(bicyclesController).toBeDefined();
     }));
 
-    it('should have 0 bicycles', inject(function ($controller) {
+    it('should have 2 bicycles', inject(function ($httpBackend, $controller) {
+        $httpBackend.expectGET('api/bicycles')
+              .respond([{
+                  id: 1,
+                  name: 'testBicycle1'
+              },
+              {
+                  id: 2,
+                  name: 'testBicycle2'
+              }]);
+
         var $scope = {};
-        $controller('BicyclesController', { $scope: $scope, bicyclesService: { getBicycles: function (){ return []; }} });
+        $controller('BicyclesController', { $scope: $scope });
+
+        $httpBackend.flush();
+
         expect($scope.bicycles).toBeDefined();
-        expect($scope.bicycles.length).toEqual(0);
+        expect($scope.bicycles.length).toEqual(2);
+        expect($scope.bicycles[1].name).toEqual("testBicycle2");
     }));
 });
