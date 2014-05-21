@@ -11,14 +11,8 @@ describe("bicyclesController", function () {
 
     it('should have 2 bicycles', inject(function ($httpBackend, $controller) {
         $httpBackend.expectGET('api/bicycles')
-              .respond([{
-                  id: 1,
-                  name: 'testBicycle1'
-              },
-              {
-                  id: 2,
-                  name: 'testBicycle2'
-              }]);
+              .respond([{ id: 1, name: 'testBicycle1' },
+                        { id: 2, name: 'testBicycle2' }]);
 
         var $scope = {};
         $controller('BicyclesController', { $scope: $scope });
@@ -28,5 +22,8 @@ describe("bicyclesController", function () {
         expect($scope.bicycles).toBeDefined();
         expect($scope.bicycles.length).toEqual(2);
         expect($scope.bicycles[1].name).toEqual("testBicycle2");
+
+        $httpBackend.verifyNoOutstandingExpectation();
+        $httpBackend.verifyNoOutstandingRequest();
     }));
 });
