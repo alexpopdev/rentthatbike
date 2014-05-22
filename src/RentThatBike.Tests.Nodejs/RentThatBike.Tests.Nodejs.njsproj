@@ -5,7 +5,7 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
     <Name>RentThatBike.Tests.Nodejs</Name>
     <RootNamespace>RentThatBike.Tests.karma</RootNamespace>
-    <ScriptArguments>start karma.conf.js</ScriptArguments>
+    <ScriptArguments>protractor.conf.js</ScriptArguments>
     <LaunchUrl>
     </LaunchUrl>
   </PropertyGroup>
@@ -16,7 +16,7 @@
     <ProjectGuid>bc17bb9f-8a72-49fe-bfdf-1e726f2c49d4</ProjectGuid>
     <ProjectHome>
     </ProjectHome>
-    <StartupFile>node_modules\karma\bin\karma</StartupFile>
+    <StartupFile>node_modules\protractor\bin\protractor</StartupFile>
     <StartWebBrowser>False</StartWebBrowser>
     <SearchPath>
     </SearchPath>
