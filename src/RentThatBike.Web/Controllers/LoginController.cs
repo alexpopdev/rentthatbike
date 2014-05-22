@@ -1,16 +1,8 @@
-﻿using System;
-using System.Linq;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using RentThatBike.Web.Models;
-using RentThatBike.Web.ServiceModel.Types;
 using ServiceStack;
-using ServiceStack.CacheAccess;
-using ServiceStack.Common;
 using ServiceStack.Common.Web;
-using ServiceStack.Mvc;
-using ServiceStack.ServiceInterface;
 using ServiceStack.ServiceInterface.Auth;
-using ServiceStack.WebHost.Endpoints;
 
 namespace RentThatBike.Web.Controllers
 {
