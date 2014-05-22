@@ -25,4 +25,11 @@
         
         expect(displayName.getText()).toEqual('Admin User(admin@rentthatbike.com)');
     });
+
+    it('should display 4 bicycles', function () {
+
+        var bicycles = element.all(by.repeater('bicycle in bicycles'));
+
+        expect(bicycles.count()).toEqual(4);
+    });
 });
