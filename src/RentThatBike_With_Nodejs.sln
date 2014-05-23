@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentThatBike.Web", "RentTha
 EndProject
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "RentThatBike.Tests.Nodejs", "RentThatBike.Tests.Nodejs\RentThatBike.Tests.Nodejs.njsproj", "{BC17BB9F-8A72-49FE-BFDF-1E726F2C49D4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentThatBike.Tests", "RentThatBike.Tests\RentThatBike.Tests.csproj", "{295610DF-4F7C-4FB7-9583-2B7C2DEEF325}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{BC17BB9F-8A72-49FE-BFDF-1E726F2C49D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC17BB9F-8A72-49FE-BFDF-1E726F2C49D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC17BB9F-8A72-49FE-BFDF-1E726F2C49D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{295610DF-4F7C-4FB7-9583-2B7C2DEEF325}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{295610DF-4F7C-4FB7-9583-2B7C2DEEF325}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{295610DF-4F7C-4FB7-9583-2B7C2DEEF325}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{295610DF-4F7C-4FB7-9583-2B7C2DEEF325}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
