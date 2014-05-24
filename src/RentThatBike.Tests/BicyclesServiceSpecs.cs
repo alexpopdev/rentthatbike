@@ -13,17 +13,8 @@ using Xunit;
 
 namespace RentThatBike.Tests
 {
-    public class BicyclesServiceSpecs
+    public class BicyclesServiceSpecs : TestsBase
     {
-        private const string BaseUrl = "http://localhost:61804/";
-
-        static BicyclesServiceSpecs()
-        {
-            var appHostTest = new AppHostTest();
-            appHostTest.Init();
-            appHostTest.Start(BaseUrl);
-        }
-
         [Scenario]
         public void GetBicyclesWithSeedData()
         {

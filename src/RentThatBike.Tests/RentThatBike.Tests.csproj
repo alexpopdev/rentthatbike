@@ -113,7 +113,9 @@
   <ItemGroup>
     <Compile Include="AppHostTest.cs" />
     <Compile Include="BicyclesServiceSpecs.cs" />
+    <Compile Include="BicycleTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestsBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RentThatBike.Web\RentThatBike.Web.csproj">
