@@ -255,6 +255,7 @@
     <Compile Include="ServiceModel\Types\Customer.cs" />
     <Compile Include="ServiceModel\GetRentals.cs" />
     <Compile Include="ServiceModel\GetBicycle.cs" />
+    <Compile Include="ServiceModel\Types\IBicyleRepository.cs" />
     <Compile Include="ServiceModel\Types\Rental.cs" />
   </ItemGroup>
   <ItemGroup>

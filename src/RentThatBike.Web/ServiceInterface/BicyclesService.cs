@@ -12,7 +12,7 @@ namespace RentThatBike.Web.ServiceInterface
     [Authenticate]
     public class BicyclesService : IService
     {
-        public BicyleRepository BicyleRepository { get; set; }
+        public IBicyleRepository BicyleRepository { get; set; }
 
         public List<Bicycle> Get(GetBicycles request)
         {

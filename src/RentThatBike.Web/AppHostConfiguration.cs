@@ -55,9 +55,9 @@ namespace RentThatBike.Web
                         ConfigurationManager.ConnectionStrings["SqlLiteConnection"].ConnectionString.MapHostAbsolutePath(),
                         SqliteDialect.Provider));    
             }
-            
 
-            container.RegisterAutoWired<BicyleRepository>().ReusedWithin(ReuseScope.Request);
+
+            container.RegisterAutoWiredAs<BicyleRepository, IBicyleRepository>().ReusedWithin(ReuseScope.Request);
 
             container.Register<IUserAuthRepository>(c =>
                 new OrmLiteAuthRepository(c.Resolve<IDbConnectionFactory>()));

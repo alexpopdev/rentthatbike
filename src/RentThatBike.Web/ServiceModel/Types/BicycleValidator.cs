@@ -10,7 +10,7 @@ namespace RentThatBike.Web.ServiceModel.Types
 {
     public class BicycleValidator : AbstractValidator<Bicycle>
     {
-        public BicycleValidator(BicyleRepository bicyleRepository)
+        public BicycleValidator(IBicyleRepository bicyleRepository)
         {
             RuleFor(b => b.Name).NotEmpty();
             RuleFor(b => b.Quantity).GreaterThan(0);

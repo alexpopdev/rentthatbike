@@ -7,7 +7,7 @@ using ServiceStack.OrmLite;
 
 namespace RentThatBike.Web.ServiceModel.Types
 {
-    public class BicyleRepository : IDisposable
+    public class BicyleRepository : IBicyleRepository, IDisposable
     {
         public IDbConnectionFactory DbConnectionFactory { get; set; }
 
