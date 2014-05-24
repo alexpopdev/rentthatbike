@@ -31,7 +31,7 @@ namespace RentThatBike.Tests
             "Given the seed data is created"
                 .Given(() => { });
 
-            "When a GET api/bicycles request is made using admin credentials"
+            "When a GET bicycles request is made using admin credentials"
                 .When(() =>
                 {
                     var restClient = new JsonServiceClient(BaseUrl);
@@ -53,7 +53,7 @@ namespace RentThatBike.Tests
                     Assert.NotNull(bicycles);
                 });
 
-            "Then 4 bicycles are returned."
+            "And 4 bicycles are returned."
                 .Then(() =>
                 {
                     Assert.Equal(4, bicycles.Count);
