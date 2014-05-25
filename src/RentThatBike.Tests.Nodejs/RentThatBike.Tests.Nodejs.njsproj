@@ -35,6 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="karma.conf.js" />
+    <Compile Include="tests\unit\controllers\bicycleControllerSpec.js" />
     <Compile Include="tests\unit\controllers\bicyclesControllerSpec.js" />
     <Content Include="package.json" />
     <Content Include="README.md" />
