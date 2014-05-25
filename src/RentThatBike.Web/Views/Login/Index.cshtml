@@ -11,9 +11,9 @@
         @Html.ValidationSummary()
         @Html.TextBoxFor(m => m.EmailAddress, new { type = "email", @class = "form-control", placeholder = "Email Address", required = "", autofocus = "" })
         @Html.TextBoxFor(m => m.Password, new { type = "password", @class = "form-control", placeholder = "Password", required = "required" })
-        <label class="checkbox">
+        <div class="checkbox">
             @Html.CheckBoxFor(m => m.RememberMe) Remember me
-        </label>
+        </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
     }
 </div>
