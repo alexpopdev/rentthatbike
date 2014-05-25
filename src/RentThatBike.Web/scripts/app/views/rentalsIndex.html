@@ -30,7 +30,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="rental in rentals">
+                <tr data-ng-repeat="rental in rentals">
                     <td>{{rental.id}}</td>
                     <td>{{rental.startDate | date:'yyyy-MM-dd EEE'}}</td>
                     <td>{{rental.endDate | date:'yyyy-MM-dd EEE'}}</td>
