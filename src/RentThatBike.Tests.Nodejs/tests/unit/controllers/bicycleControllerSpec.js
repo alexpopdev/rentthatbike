@@ -17,21 +17,21 @@ describe("bicycleController", function () {
         expect($scope.formTitle).toEqual("Add new bicycle");
     }));
 
-    it('should be in edit bicycle mode for the route with bicycleId set to 1', inject(function ($controller, $q) {
+    it('should be in edit bicycle mode for the route with bicycleId set to 1', inject(function ($httpBackend, $controller) {
         var $scope = {};
-        var deferred = $q.defer();
-        var bicyclesService = {
-            getBicycleTypes: function() { return []; },
-            getBicycle: function(bicycleId) {
-                if (bicycleId == 1) {
-                    return deferred;
-                }
-                return null;
-            }
-        };
-        $controller('BicycleController', { $scope: $scope, $routeParams: { bicycleId: 1}, bicyclesService: bicyclesService });
+
+        $httpBackend.expectGET('api/bicycles/1')
+           .respond({ id: 1, name: 'testBicycle1' });
+
+        $controller('BicycleController', { $scope: $scope, $routeParams: { bicycleId: 1 } });
+
+        $httpBackend.flush();
 
         expect($scope.bicycle).toBeDefined();
         expect($scope.formTitle).toEqual("Update bicycle");
+        expect($scope.bicycle.id).toEqual(1);
+
+        $httpBackend.verifyNoOutstandingExpectation();
+        $httpBackend.verifyNoOutstandingRequest();
     }));
 });
