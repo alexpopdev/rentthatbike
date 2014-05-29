@@ -11,6 +11,11 @@ namespace RentThatBike.Web.ServiceModel.Types
     [Route("/bicycles/{Id}", "PUT")]
     public class Bicycle : IReturn<Bicycle>
     {
+        public Bicycle()
+        {
+            Created = DateTime.UtcNow;
+        }
+
         [AutoIncrement]
         public int Id { get; set; }
 
@@ -30,5 +35,7 @@ namespace RentThatBike.Web.ServiceModel.Types
         public int Quantity { get; set; }
 
         public double RentPrice { get; set; }
+
+        public DateTime Created { get; set; }
     }
 }
