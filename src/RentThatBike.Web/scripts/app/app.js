@@ -1,9 +1,9 @@
 ﻿(function () {
     "use strict";
 
-    var myAppModule = angular.module('myApp', ['ngRoute', 'ngResource', 'ui.bootstrap', 'angularSpinner']);
+    var myAppModule = angular.module('myApp', ['ngRoute', 'ngResource', 'ui.bootstrap', 'angularSpinner', 'tmh.dynamicLocale']);
 
-    myAppModule.config(['$provide', '$httpProvider', function ($provide, $httpProvider) {
+    myAppModule.config(['$provide', '$httpProvider', 'tmhDynamicLocaleProvider', function ($provide, $httpProvider, tmhDynamicLocaleProvider) {
         $provide.decorator('$exceptionHandler', ['$delegate', function ($delegate) {
             return function (exception, cause) {
                 $delegate(exception, cause);
@@ -12,6 +12,8 @@
         }]);
 
         $httpProvider.interceptors.push('httpInterceptor');
+
+        tmhDynamicLocaleProvider.localeLocationPattern('scripts/i18n/angular-locale_{{locale}}.js');
     }]);
 
     myAppModule.config([
