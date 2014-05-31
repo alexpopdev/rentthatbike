@@ -457,7 +457,6 @@
     <Content Include="scripts\respond.min.js" />
     <Content Include="scripts\spin.js" />
     <Content Include="scripts\spin.min.js" />
-    <Content Include="scripts\tmhDynamicLocale.js" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />

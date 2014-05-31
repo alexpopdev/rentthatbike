@@ -19,7 +19,7 @@ namespace RentThatBike.Web
           
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                       "~/scripts/angular.js",
-                      "~/scripts/tmhDynamicLocale.js",
+                      "~/scripts/i18n/angular-locale_fr-fr.js",
                       "~/scripts/angular-route.js",
                       "~/scripts/angular-resource.js",
                       "~/scripts/ui-bootstrap-{version}.js",

@@ -19,7 +19,7 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/browser-support")
 </head>
-<body data-ng-controller="ApplicationController" data-ng-cloak>
+<body data-ng-controller="ApplicationController">
     <header>
         <nav class="navbar navbar-inverse" role="navigation">
             <div class="container-fluid">
@@ -43,14 +43,6 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#">{{serverSideData.userDisplayName}}({{serverSideData.userEmail}})</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Locale id {{selectedLocale}} <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li data-ng-repeat="supportedLocale in supportedLocales">
-                                    <a href="" data-ng-click="onLocaleChanged($index)">{{supportedLocale}}</a>
-                                </li>
-                            </ul>
-                        </li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
