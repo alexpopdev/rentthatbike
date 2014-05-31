@@ -16,7 +16,6 @@ div[data-ng-view].ng-enter {
     -webkit-animation: slideInRight 1s;
     -moz-animation: slideInRight 1s;
     -o-animation: slideInRight 1s;
-    -ms-animation: slideInRight 1s;
     animation: slideInRight 1s;
 }
 
