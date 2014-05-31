@@ -1,7 +1,7 @@
 ﻿(function () {
     "use strict";
 
-    var myAppModule = angular.module('myApp', ['ngAnimate', 'ngRoute', 'ngResource', 'ui.bootstrap', 'angularSpinner', 'tmh.dynamicLocale']);
+    var myAppModule = angular.module('myApp', ['ngRoute', 'ngResource', 'ui.bootstrap', 'angularSpinner', 'tmh.dynamicLocale']);
 
     myAppModule.config(['$provide', '$httpProvider', 'tmhDynamicLocaleProvider', function ($provide, $httpProvider, tmhDynamicLocaleProvider) {
         $provide.decorator('$exceptionHandler', ['$delegate', function ($delegate) {

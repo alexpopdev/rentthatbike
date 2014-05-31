@@ -1,18 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30110.0
+VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentThatBike.Web", "RentThatBike.Web\RentThatBike.Web.csproj", "{4E82E4E0-4683-438B-9C85-5AFD36484F90}"
 EndProject
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "RentThatBike.Tests.Nodejs", "RentThatBike.Tests.Nodejs\RentThatBike.Tests.Nodejs.njsproj", "{BC17BB9F-8A72-49FE-BFDF-1E726F2C49D4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentThatBike.Tests", "RentThatBike.Tests\RentThatBike.Tests.csproj", "{295610DF-4F7C-4FB7-9583-2B7C2DEEF325}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{D2C281E9-1CC8-4DD4-B20F-BE20D91B0589}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\packages.config = .nuget\packages.config
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

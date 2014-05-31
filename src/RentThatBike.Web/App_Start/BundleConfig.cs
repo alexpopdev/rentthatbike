@@ -19,13 +19,12 @@ namespace RentThatBike.Web
           
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                       "~/scripts/angular.js",
-                      "~/scripts/angular-animate.js",
+                      "~/scripts/tmhDynamicLocale.js",
                       "~/scripts/angular-route.js",
                       "~/scripts/angular-resource.js",
                       "~/scripts/ui-bootstrap-{version}.js",
                       "~/scripts/spin.js",
-                      "~/scripts/angular-spinner.js",
-                      "~/scripts/tmhDynamicLocale.js"));
+                      "~/scripts/angular-spinner.js"));
             
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
                       "~/scripts/app/app.js",
@@ -36,7 +35,6 @@ namespace RentThatBike.Web
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/content/bootstrap.css",
-                      "~/content/animate.css",
                       "~/content/app/app.css"));
 
             BundleTable.EnableOptimizations = false;
