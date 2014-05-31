@@ -149,6 +149,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="content\animate.css" />
+    <Content Include="content\animate.min.css" />
     <Content Include="content\app\app.css" />
     <Content Include="content\bootstrap-theme.css" />
     <Content Include="content\bootstrap-theme.min.css" />
@@ -162,6 +164,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="content\bootstrap-theme.css.map" />
     <Content Include="content\bootstrap.css.map" />
+    <Content Include="scripts\angular-animate.js" />
+    <Content Include="scripts\angular-animate.min.js" />
     <Content Include="scripts\angular-resource.js" />
     <Content Include="scripts\angular-resource.min.js" />
     <Content Include="scripts\angular-route.js" />
@@ -174,6 +178,7 @@
     <Content Include="scripts\angular-route.min.js.map" />
     <Content Include="scripts\angular-resource.min.js.map" />
     <Content Include="scripts\angular-spinner.min.js.map" />
+    <Content Include="scripts\angular-animate.min.js.map" />
     <None Include="scripts\jquery-1.9.0.intellisense.js" />
     <Content Include="scripts\angular-mocks.js" />
     <Content Include="scripts\app\app.js" />
