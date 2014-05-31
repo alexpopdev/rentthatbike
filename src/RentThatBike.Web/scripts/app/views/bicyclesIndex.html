@@ -23,7 +23,6 @@
                     <th>Type</th>
                     <th>Quantity</th>
                     <th>Daily rent price</th>
-                    <th>Created</th>
                     <th></th>
                 </tr>
             </thead>
@@ -34,7 +33,6 @@
                     <td>{{bicycle.typeName}}</td>
                     <td>{{bicycle.quantity}}</td>
                     <td>{{bicycle.rentPrice | currency}}</td>
-                    <td>{{bicycle.created | date:'short'}}</td>
                     <td><a class="btn btn-default" role="button" href="#/bicycles/{{bicycle.id}}/edit">Edit</a></td>
                 </tr>
             </tbody>

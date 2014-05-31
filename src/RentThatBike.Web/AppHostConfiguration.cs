@@ -1,5 +1,4 @@
-﻿using System;
-using System.Configuration;
+﻿using System.Configuration;
 using System.Data;
 using Funq;
 using RentThatBike.Web.ServiceModel.Types;
@@ -28,7 +27,6 @@ namespace RentThatBike.Web
         {
 
             JsConfig.EmitCamelCaseNames = true;
-            JsConfig.DateHandler = JsonDateHandler.ISO8601;
 
             _appHost.Plugins.Add(new ValidationFeature());
             container.RegisterValidators(typeof (AppHost).Assembly);
@@ -79,9 +77,7 @@ namespace RentThatBike.Web
         {
             using (IDbConnection db = container.Resolve<IDbConnectionFactory>().OpenDbConnection())
             {
-                //tables will be recreated each time the app restarts
-                db.DropAndCreateTable<Bicycle>();
-                //db.CreateTableIfNotExists<Bicycle>();
+                db.CreateTableIfNotExists<Bicycle>();
                 if (db.SqlScalar<int>("SELECT COUNT(*) FROM Bicycle") == 0)
                 {
                     db.InsertAll(
