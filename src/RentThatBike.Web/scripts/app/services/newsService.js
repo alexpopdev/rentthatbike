@@ -17,7 +17,7 @@
 
         return {
             getNews: function () {
-                return NewsResource.queryWithJSONP();
+                return NewsResource.query();
             }
         };
     }]);
