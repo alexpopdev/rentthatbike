@@ -13,7 +13,7 @@
 
         var updateBicycleTypeName = function (bicycle) {
             angular.forEach(bicycleTypes, function (bicycleType) {
-                if (bicycleType.id == bicycle.type) {
+                if (bicycleType.id === bicycle.type) {
                     bicycle.typeName = bicycleType.name;
                 }
             });

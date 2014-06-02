@@ -1,0 +1,16 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <h1>News</h1>
+    </div>
+</div>
+<div class="row" ng-repeat="newsItems in news">
+    <div class="col-md-2">
+        {{newsItem.created}}
+    </div>
+    <div class="col-md-2">
+        {{newsItem.title}}
+    </div>
+    <div class="col-md-8">
+        {{newsItem.content}}
+    </div>
+</div>

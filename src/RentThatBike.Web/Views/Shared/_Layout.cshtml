@@ -19,7 +19,7 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/browser-support")
 </head>
-<body data-ng-controller="ApplicationController">
+<body data-ng-controller="ApplicationController" data-ng-cloak>
     <header>
         <nav class="navbar navbar-inverse" role="navigation">
             <div class="container-fluid">
@@ -40,6 +40,7 @@
                         <li><a href="#/rentals">Rentals</a></li>
                         <li><a href="#/customers">Customers</a></li>
                         <li><a href="#/bicycles">Bicycles</a></li>
+                        <li><a href="#/news">News</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#">{{serverSideData.userDisplayName}}({{serverSideData.userEmail}})</a></li>
