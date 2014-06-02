@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Web;
 using Funq;
 using ServiceStack.Common.Web;
+using ServiceStack.Text;
 using ServiceStack.WebHost.Endpoints;
 
 namespace RentThatBike.WebServices
@@ -19,6 +20,13 @@ namespace RentThatBike.WebServices
 
         public override void Configure(Container container)
         {
+            JsConfig.EmitCamelCaseNames = true;
+            JsConfig.DateHandler = JsonDateHandler.ISO8601;
+
+            SetConfig(new EndpointHostConfig
+            {
+                AllowJsonpRequests = true
+            });
         }
     }
 }

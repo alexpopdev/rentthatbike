@@ -3,14 +3,13 @@
         <h1>News</h1>
     </div>
 </div>
-<div class="row" ng-repeat="newsItems in news">
-    <div class="col-md-2">
-        {{newsItem.created}}
-    </div>
-    <div class="col-md-2">
-        {{newsItem.title}}
-    </div>
-    <div class="col-md-8">
-        {{newsItem.content}}
+<div class="row">
+    <div class="col-md-12">
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="newsItem in news">
+                <h4 class="list-group-item-heading">{{newsItem.title}}</h4>
+                <p class="list-group-item-text"><strong>{{newsItem.created | date:'fullDate'}} : </strong>{{newsItem.content}}</p>
+            </li>
+        </ul>
     </div>
 </div>
