@@ -24,7 +24,7 @@
             $routeProvider.when('/customers/new', { templateUrl: 'scripts/app/views/customerEditor.html', controller: 'CustomerController' });
             $routeProvider.when('/customers/:customerId/edit', { templateUrl: 'scripts/app/views/customerEditor.html', controller: 'CustomerController' });
             $routeProvider.when('/rentals', { templateUrl: 'scripts/app/views/rentalsIndex.html', controller: 'RentalsController' });
-            $routeProvider.when('/rentals/new', { templateUrl: 'wcripts/app/views/rentalsEditor.html', controller: 'RentalController' });
+            $routeProvider.when('/rentals/new', { templateUrl: 'scripts/app/views/rentalsEditor.html', controller: 'RentalController' });
             $routeProvider.when('/rentals/:rentalId/edit', { templateUrl: 'scripts/app/views/rentalsEditor.html', controller: 'RentalController' });
             $routeProvider.when('/news', { templateUrl: 'scripts/app/views/newsIndex.html', controller: 'NewsController' });
             $routeProvider.when('/feedbacks/new', { templateUrl: 'scripts/app/views/feedbacksEditor.html', controller: 'FeedbackController' });
