@@ -176,6 +176,7 @@
     <None Include="scripts\jquery-1.9.0.intellisense.js" />
     <Content Include="scripts\angular-mocks.js" />
     <Content Include="scripts\app\app.js" />
+    <Content Include="scripts\app\controllers\feedbackController.js" />
     <Content Include="scripts\app\controllers\newsController.js" />
     <Content Include="scripts\app\controllers\rentalController.js" />
     <Content Include="scripts\app\controllers\customerController.js" />
@@ -184,11 +185,13 @@
     <Content Include="scripts\app\controllers\customersController.js" />
     <Content Include="scripts\app\controllers\bicyclesController.js" />
     <Content Include="scripts\app\controllers\applicationController.js" />
+    <Content Include="scripts\app\services\feedbacksService.js" />
     <Content Include="scripts\app\services\newsService.js" />
     <Content Include="scripts\app\services\httpInterceptor.js" />
     <Content Include="scripts\app\services\rentalsService.js" />
     <Content Include="scripts\app\services\customersService.js" />
     <Content Include="scripts\app\services\bicyclesService.js" />
+    <Content Include="scripts\app\views\feedbacksEditor.html" />
     <Content Include="scripts\app\views\newsIndex.html" />
     <Content Include="scripts\app\views\rentalsEditor.html" />
     <Content Include="scripts\app\views\customerEditor.html" />

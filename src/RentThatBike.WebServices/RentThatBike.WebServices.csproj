@@ -95,6 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppHost.cs" />
+    <Compile Include="Feedback.cs" />
     <Compile Include="FeedbacksService.cs" />
     <Compile Include="GetNews.cs" />
     <Compile Include="Global.asax.cs">
