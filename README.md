@@ -1,7 +1,7 @@
 rentthatbike
 ============
 
-The main application example for my book "Learning AngularJS for .Net Developers" available to preorder [here](http://www.packtpub.com/learning-angularjs-for-net-developers/book).
+The main application example for my book "Learning AngularJS for .NET Developers" available to preorder [here](http://www.packtpub.com/learning-angularjs-for-net-developers/book).
 
 
 You need to use Visual Studio 2013 to load the "src\RentThatBike.sln" file and run the project.
