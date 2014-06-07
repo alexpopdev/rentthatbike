@@ -7,9 +7,9 @@ The main application example for my book "Learning AngularJS for .NET Developers
 You need to use Visual Studio 2013 to load the "src\RentThatBike.sln" file and run the project.
 The application was built sequentially and has three main sequences: building the client side part with AngularJS, building the web service services part with ServiceStack, and the putting it all together part with AngularJS, ASP.NET MVC and ServiceStack.
 
-The application for the first AngularJS section from the chapter2-example13 branch is hosted here: [rentthatbike.azurewebsites.net](http://rentthatbike.azurewebsites.net)
+The application for the first AngularJS section from the chapter2-example13 branch is hosted here: [rentthatbike.azurewebsites.net](http://rentthatbike.azurewebsites.net).
 
-The application for the master branch is hosted here: [rentthatbike-dev.azurewebsites.net](http://rentthatbike-dev.azurewebsites.net)
+The application for the master branch is hosted here: [rentthatbike-dev.azurewebsites.net](http://rentthatbike-dev.azurewebsites.net). At the moment it is not yet on par with the ANgularJS application it only has the code covered in the book in the ServiceStack and ASP.NET MVC sections.
 
 ###"Home" view  
 ![Home](/docs/images/home.PNG "Home")
