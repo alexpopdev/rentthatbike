@@ -5,10 +5,11 @@
 
     myAppModule.config([
         '$routeProvider', function ($routeProvider) {
-            $routeProvider.when('/', { templateUrl: 'scripts/app/views/default.html' });
-            $routeProvider.when('/bicycles', { templateUrl: 'scripts/app/views/bicyclesIndex.html', controller: 'BicyclesController' });
-            $routeProvider.when('/customers', { templateUrl: 'scripts/app/views/customersIndex.html' });
-            $routeProvider.when('/rentals', { templateUrl: 'scripts/app/views/rentalsIndex.html' });
+            $routeProvider
+                .when('/', { templateUrl: 'scripts/app/views/default.html' })
+                .when('/bicycles', { templateUrl: 'scripts/app/views/bicyclesIndex.html', controller: 'BicyclesController' })
+                .when('/customers', { templateUrl: 'scripts/app/views/customersIndex.html' })
+                .when('/rentals', { templateUrl: 'scripts/app/views/rentalsIndex.html' });
         }
     ]);
 
