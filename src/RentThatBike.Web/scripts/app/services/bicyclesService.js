@@ -30,10 +30,10 @@
             getBicycles: function () {
                 return bicycles;
             },
-            getBicycle: function (bicyleId) {
+            getBicycle: function (bicycleId) {
                 var existingBicycle = null;
                 angular.forEach(bicycles, function (bicycle) {
-                    if (bicycle.id == bicyleId) {
+                    if (bicycle.id == bicycleId) {
                         existingBicycle = bicycle;
                     }
                 });
