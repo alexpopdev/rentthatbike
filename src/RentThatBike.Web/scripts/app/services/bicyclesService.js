@@ -25,6 +25,7 @@
             },
             getBicycle: function (bicycleId) {
                 return BicycleResource.get({ bicycleId: bicycleId });
+
             },
             getBicycleTypes: function () {
                 return bicycleTypes;
