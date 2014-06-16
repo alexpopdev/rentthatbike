@@ -1,4 +1,6 @@
-﻿using System.Web;
+﻿using System;
+using System.Configuration;
+using System.Web;
 using System.Web.Optimization;
 
 namespace RentThatBike.Web
@@ -31,7 +33,7 @@ namespace RentThatBike.Web
                       "~/content/bootstrap.css",
                       "~/content/app/app.css"));
 
-            BundleTable.EnableOptimizations = true;
+            BundleTable.EnableOptimizations = Convert.ToBoolean(ConfigurationManager.AppSettings.Get("BundleTable.EnableOptimizations"));
 
         }
     }
