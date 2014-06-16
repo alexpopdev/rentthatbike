@@ -13,7 +13,7 @@
     }]);
 
     myAppModule.config([
-        '$routeProvider', function ($routeProvider) {
+        '$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
             $routeProvider
                 .when('/', { templateUrl: 'scripts/app/views/default.html' })
                 .when('/bicycles', { templateUrl: 'scripts/app/views/bicyclesIndex.html', controller: 'BicyclesController' })
