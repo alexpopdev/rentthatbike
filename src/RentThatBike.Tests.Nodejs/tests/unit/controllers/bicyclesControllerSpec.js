@@ -11,7 +11,7 @@ describe("bicyclesController", function () {
 
     it('should have 2 bicycles', inject(function ($httpBackend, $controller) {
         $httpBackend.expectGET('api/bicycles')
-              .respond([{ id: 1, name: 'testBicycle1' },
+              .respond(200, [{ id: 1, name: 'testBicycle1' },
                         { id: 2, name: 'testBicycle2' }]);
 
         var $scope = {};
