@@ -21,7 +21,7 @@ describe("bicycleController", function () {
         var $scope = {};
 
         $httpBackend.expectGET('api/bicycles/1')
-           .respond({ id: 1, name: 'testBicycle1' });
+           .respond(200, { id: 1, name: 'testBicycle1' });
 
         $controller('BicycleController', { $scope: $scope, $routeParams: { bicycleId: 1 } });
 
