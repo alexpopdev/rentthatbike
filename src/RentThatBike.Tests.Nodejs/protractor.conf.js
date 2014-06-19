@@ -4,7 +4,10 @@
 
     // Capabilities to be passed to the webdriver instance.
     capabilities: {
-        'browserName': 'chrome'
+        'browserName': 'chrome',
+        'chromeOptions': {
+            'args': ['window-size=1024,768']
+        }
     },
 
     // Spec patterns are relative to the location of the spec file. They may
