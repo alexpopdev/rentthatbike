@@ -1,7 +1,7 @@
 rentthatbike
 ============
 
-The main application example repository for my book "Learning AngularJS for .NET Developers" available to order at  [www.packtpub.com/learning-angularjs-for-net-developers/book](http://www.packtpub.com/learning-angularjs-for-net-developers/book).  
+The main application example repository for my book "Learning AngularJS for .NET Developers" available to order at  [www.packtpub.com/learning-angularjs-for-net-developers/book](http://bit.ly/1kbcAdf).  
 There is another repository containing examples covering the concepts of the book at [github.com/popalexandruvasile/angularjs-dotnet-book](https://github.com/popalexandruvasile/angularjs-dotnet-book).  
 There are two blog posts introducing this book:  
 [Announcing my upcoming book "Learning AngularJS for .NET developers"](http://alexvpop.blogspot.co.uk/2014/06/announcing-learning-angularjs-dotnet.html)  
