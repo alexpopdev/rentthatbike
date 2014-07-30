@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using ServiceStack.DataAnnotations;
-using ServiceStack.ServiceHost;
+using ServiceStack;
 
 namespace RentThatBike.Web.ServiceModel.Types
 {

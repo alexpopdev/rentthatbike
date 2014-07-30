@@ -5,9 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using RentThatBike.Web.ServiceModel;
 using RentThatBike.Web.ServiceModel.Types;
+using ServiceStack;
 using ServiceStack.OrmLite;
-using ServiceStack.ServiceClient.Web;
-using ServiceStack.ServiceInterface.Auth;
+using ServiceStack.Web;
+using ServiceStack.Auth;
 using Xbehave;
 using Xunit;
 
@@ -27,7 +28,7 @@ namespace RentThatBike.Tests
                 {
                     var restClient = new JsonServiceClient(BaseUrl);
                     
-                    restClient.Send(new Auth
+                    restClient.Send(new Authenticate
                     {
                         provider = CredentialsAuthProvider.Name,
                         UserName = "admin@rentthatbike.com",

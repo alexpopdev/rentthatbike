@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using RentThatBike.Web.ServiceModel.Types;
-using ServiceStack.ServiceHost;
+using ServiceStack;
 
 namespace RentThatBike.Web.ServiceModel
 {

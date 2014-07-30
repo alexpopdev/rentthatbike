@@ -2,15 +2,17 @@
 using System.Data;
 using Funq;
 using RentThatBike.Web.ServiceModel.Types;
-using ServiceStack.CacheAccess;
-using ServiceStack.CacheAccess.Providers;
-using ServiceStack.Common.Utils;
+using ServiceStack;
+using ServiceStack.Auth;
+using ServiceStack;
+using ServiceStack.Caching;
+using ServiceStack.Common;
+using ServiceStack.Data;
 using ServiceStack.OrmLite;
-using ServiceStack.ServiceInterface;
-using ServiceStack.ServiceInterface.Auth;
-using ServiceStack.ServiceInterface.Validation;
+using ServiceStack.Auth;
+using ServiceStack.Validation;
 using ServiceStack.Text;
-using ServiceStack.WebHost.Endpoints;
+using ServiceStack.Host;
 
 namespace RentThatBike.Web
 {
@@ -45,7 +47,6 @@ namespace RentThatBike.Web
                 container.Register<IDbConnectionFactory>(
                     new OrmLiteConnectionFactory(
                         ":memory:",
-                        false,
                         SqliteDialect.Provider));
             }
             else
@@ -62,8 +63,8 @@ namespace RentThatBike.Web
             container.Register<IUserAuthRepository>(c =>
                 new OrmLiteAuthRepository(c.Resolve<IDbConnectionFactory>()));
 
-            var userAuthRepository = (OrmLiteAuthRepository) container.Resolve<IUserAuthRepository>();
-            userAuthRepository.CreateMissingTables();
+            var userAuthRepository = container.Resolve<IUserAuthRepository>();
+            userAuthRepository.InitSchema();
             if (userAuthRepository.GetUserAuthByUserName("admin@rentthatbike.com") == null)
             {
                 userAuthRepository.CreateUserAuth(

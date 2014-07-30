@@ -4,8 +4,7 @@ using System.Linq;
 using System.Threading;
 using RentThatBike.Web.ServiceModel;
 using RentThatBike.Web.ServiceModel.Types;
-using ServiceStack.ServiceHost;
-using ServiceStack.ServiceInterface;
+using ServiceStack;
 
 namespace RentThatBike.Web.ServiceInterface
 {

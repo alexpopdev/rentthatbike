@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Linq.Expressions;
+using ServiceStack.Data;
 using ServiceStack.OrmLite;
 
 namespace RentThatBike.Web.ServiceModel.Types
@@ -34,7 +35,7 @@ namespace RentThatBike.Web.ServiceModel.Types
         public void Add(Bicycle bicycle)
         {
             Db.Insert(bicycle);
-            bicycle.Id = (int)Db.GetLastInsertId();
+            bicycle.Id = (int)Db.LastInsertId();
         }
 
         public Bicycle Update(Bicycle sourceBicycle)

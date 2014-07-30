@@ -6,12 +6,13 @@ using System.Web;
 using System.Web.Mvc;
 using Funq;
 using RentThatBike.Web.ServiceModel;
-using ServiceStack.Common.Web;
+using ServiceStack;
+using ServiceStack.Common;
 using ServiceStack.Configuration;
 using ServiceStack.MiniProfiler;
 using ServiceStack.MiniProfiler.Data;
 using ServiceStack.Mvc;
-using ServiceStack.WebHost.Endpoints;
+using ServiceStack.Host;
 
 namespace RentThatBike.Web
 {
@@ -27,19 +28,18 @@ namespace RentThatBike.Web
             //ASP.NET MVC integration
             ControllerBuilder.Current.SetControllerFactory(new FunqControllerFactory(container));
 
-            SetConfig(CreateEndpointHostConfig());
+            SetConfig(CreateHostConfig());
 
             var appHostConfiguration = new AppHostConfiguration(this);
             appHostConfiguration.ConfigureAppHost(container);
         }
 
-        private EndpointHostConfig CreateEndpointHostConfig()
+        private HostConfig CreateHostConfig()
         {
-            return new EndpointHostConfig
+            return new HostConfig
             {
                 DebugMode = true,
-                DefaultContentType = ContentType.Json,
-                ServiceStackHandlerFactoryPath = "api"
+                HandlerFactoryPath = "api"
             };
         }
     }

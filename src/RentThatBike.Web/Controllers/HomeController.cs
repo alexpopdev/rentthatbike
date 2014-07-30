@@ -4,9 +4,9 @@ using System.Text;
 using System.Web.Mvc;
 using Microsoft.Ajax.Utilities;
 using RentThatBike.Web.Models;
+using ServiceStack;
 using ServiceStack.Mvc;
-using ServiceStack.ServiceInterface;
-using ServiceStack.ServiceInterface.Auth;
+using ServiceStack.Auth;
 using ServiceStack.Text;
 using WebGrease.Css.Extensions;
 

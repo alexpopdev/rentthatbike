@@ -1,7 +1,8 @@
 using Funq;
 using RentThatBike.Web;
-using ServiceStack.Common.Web;
-using ServiceStack.WebHost.Endpoints;
+using ServiceStack;
+using ServiceStack.Common;
+using ServiceStack.Host;
 
 namespace RentThatBike.Tests
 {
@@ -20,12 +21,11 @@ namespace RentThatBike.Tests
             appHostConfiguration.ConfigureAppHost(container, useTestDatabase: true);
         }
 
-        private EndpointHostConfig CreateEndpointHostConfig()
+        private HostConfig CreateEndpointHostConfig()
         {
-            return new EndpointHostConfig
+            return new HostConfig
             {
-                DebugMode = true,
-                DefaultContentType = ContentType.Json,
+                DebugMode = true
             };
         }
     }

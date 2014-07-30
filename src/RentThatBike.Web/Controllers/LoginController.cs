@@ -1,14 +1,14 @@
 ﻿using System.Web.Mvc;
 using RentThatBike.Web.Models;
 using ServiceStack;
-using ServiceStack.Common.Web;
-using ServiceStack.ServiceInterface.Auth;
+using ServiceStack.Common;
+using ServiceStack.Auth;
 
 namespace RentThatBike.Web.Controllers
 {
     public class LoginController : Controller
     {
-        public AuthService AuthService { get; set; }
+        public AuthenticateService AuthService { get; set; }
         //
         // GET: /login/
         [HttpGet]
@@ -30,10 +30,10 @@ namespace RentThatBike.Web.Controllers
                 return View("Index", loginData);
             }
 
-            AuthService.RequestContext = System.Web.HttpContext.Current.ToRequestContext();
+            AuthService.Request = System.Web.HttpContext.Current.ToRequest();
             try
             {
-                AuthResponse authResponse = AuthService.Authenticate(new Auth
+                AuthenticateResponse authResponse = AuthService.Authenticate(new Authenticate
                 {
                     UserName = loginData.EmailAddress,
                     Password = loginData.Password,

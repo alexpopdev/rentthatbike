@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using ServiceStack.FluentValidation;
 using ServiceStack.FluentValidation.Results;
-using ServiceStack.ServiceInterface;
+using ServiceStack;
 
 namespace RentThatBike.Web.ServiceModel.Types
 {
