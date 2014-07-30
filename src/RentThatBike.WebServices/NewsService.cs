@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using ServiceStack.ServiceHost;
+using ServiceStack;
 
 namespace RentThatBike.WebServices
 {

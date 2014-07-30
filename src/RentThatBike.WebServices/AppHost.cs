@@ -5,10 +5,10 @@ using System.Reflection;
 using System.Web;
 using Funq;
 using ServiceStack;
-using ServiceStack.Common.Web;
-using ServiceStack.ServiceInterface.Cors;
+using ServiceStack.Common;
+using ServiceStack.Web;
 using ServiceStack.Text;
-using ServiceStack.WebHost.Endpoints;
+using ServiceStack.Host;
 
 namespace RentThatBike.WebServices
 {
@@ -22,21 +22,17 @@ namespace RentThatBike.WebServices
 
         public override void Configure(Container container)
         {
-            SetConfig(new EndpointHostConfig
+            SetConfig(new HostConfig
             {
                 AllowJsonpRequests = true
             });
             
             JsConfig.EmitCamelCaseNames = true;
-            JsConfig.DateHandler = JsonDateHandler.ISO8601;
+            JsConfig.DateHandler = DateHandler.ISO8601;
 
             Plugins.Add(new CorsFeature());
 
-            PreRequestFilters.Add((httpReq, httpRes) =>
-            {
-                if (httpReq.HttpMethod == "OPTIONS")
-                    httpRes.EndRequest(); 
-            });
+          
         }
     }
 }
