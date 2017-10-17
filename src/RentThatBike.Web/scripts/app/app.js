@@ -29,6 +29,7 @@
                 .when('/rentals/:rentalId/edit', { templateUrl: 'Scripts/app/views/rentalsEditor.html', controller: 'RentalController' })
                 .when('/news', { templateUrl: 'scripts/app/views/newsIndex.html', controller: 'NewsController' })
                 .when('/feedbacks/new', { templateUrl: 'scripts/app/views/feedbacksEditor.html', controller: 'FeedbackController' });
+
         }
     ]);
 
