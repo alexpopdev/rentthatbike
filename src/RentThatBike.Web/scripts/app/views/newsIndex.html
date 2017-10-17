@@ -1,0 +1,15 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <h1>News</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="newsItem in news">
+                <h4 class="list-group-item-heading">{{newsItem.title}}</h4>
+                <p class="list-group-item-text"><strong>{{newsItem.created | date:'fullDate'}} : </strong>{{newsItem.content}}</p>
+            </li>
+        </ul>
+    </div>
+</div>

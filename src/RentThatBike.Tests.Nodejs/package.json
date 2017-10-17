@@ -1,0 +1,17 @@
+{
+  "name": "RentThatBike.Tests.Nodejs",
+  "version": "0.0.1",
+  "description": "RentThatBike.Tests.Nodejs",
+  "main": "karma.conf.js",
+  "author": {
+    "name": "Alex Pop",
+    "email": "palexandru@gmail.com"
+  },
+  "devDependencies": {
+    "karma": "^0.12.16",
+    "karma-chrome-launcher": "^0.1.3",
+    "karma-jasmine": "^0.1.5",
+    "karma-xml-reporter": "^0.1.4",
+    "protractor": "^0.23.1"
+  }
+}

@@ -3,9 +3,10 @@
 
     var myAppModule = angular.module('myApp');
 
-    myAppModule.controller('ApplicationController', ['$scope',
-            function ($scope) {
+    myAppModule.controller('ApplicationController', ['$scope', 'serverSideData',
+            function ($scope, serverSideData) {
                 $scope.isMainMenuCollapsed = false;
+                $scope.serverSideData = serverSideData;
             }
     ]);
 })();

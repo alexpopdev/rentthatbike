@@ -1,0 +1,61 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <form name="bicyleForm" role="form" class="form-horizontal" novalidate data-ng-submit="submit()">
+            <fieldset>
+                <legend>{{formTitle}}</legend>
+                <div class="form-group" data-ng-show="!isNew">
+                    <label for="inputId" class="col-md-2 control-label">Id</label>
+                    <div class="col-md-1">
+                        <input type="text" class="form-control" name="inputId" value="{{bicycle.id}}" disabled>
+                    </div>
+                </div>
+                <div class="form-group" data-ng-class="{'has-error': bicyleForm.inputName.$invalid}">
+                    <label for="inputName" class="col-md-2 control-label">Name</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" name="inputName" placeholder="Enter bicycle name here ..." required data-ng-model="bicycle.name">
+                    </div>
+                    <div class="col-md-2">
+                        <span data-ng-show="bicyleForm.inputName.$error.required" class="help-block">Required</span>
+                    </div>
+                </div>
+                <div class="form-group" data-ng-class="{'has-error': bicyleForm.selectType.$invalid}">
+                    <label for="selectType" class="col-md-2 control-label">Type</label>
+                    <div class="col-md-4">
+                        <select class="form-control" name="selectType" required data-ng-model="bicycle.type" data-ng-options="bicycleType.id as bicycleType.name for bicycleType in bicycleTypes">
+                            <option value="">Please select a bicycle type ...</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <span data-ng-show="bicyleForm.selectType.$error.required" class="help-block">Required</span>
+                    </div>
+                </div>
+                <div class="form-group" data-ng-class="{'has-error': bicyleForm.inputQuantity.$invalid}">
+                    <label for="inputQuantity" class="col-md-2 control-label">Quantity</label>
+                    <div class="col-md-1">
+                        <input type="number" class="form-control" name="inputQuantity" required data-ng-model="bicycle.quantity" min="1">
+                    </div>
+                    <div class="col-md-2">
+                        <span data-ng-show="bicyleForm.inputQuantity.$error.required" class="help-block">Required</span>
+                        <span data-ng-show="bicyleForm.inputQuantity.$error.min" class="help-block">The value needs to be greater than 0</span>
+                    </div>
+                </div>
+                <div class="form-group" data-ng-class="{'has-error': bicyleForm.inputRentPrice.$invalid}">
+                    <label for="inputRentPrice" class="col-md-2 control-label">Daily rental price</label>
+                    <div class="col-md-1">
+                        <input type="number" class="form-control" name="inputRentPrice" required data-ng-model="bicycle.rentPrice" min="1">
+                    </div>
+                    <div class="col-md-2">
+                        <span data-ng-show="bicyleForm.inputRentPrice.$error.required" class="help-block">Required</span>
+                        <span data-ng-show="bicyleForm.inputRentPrice.$error.min" class="help-block">The value needs to be greater than 0</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <button type="submit" data-ng-disabled="bicyleForm.$invalid" class="btn btn-primary">{{formTitle}}</button>
+                        <button type="button" class="btn" data-ng-click="cancel()">Cancel</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

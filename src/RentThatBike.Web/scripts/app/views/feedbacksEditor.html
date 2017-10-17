@@ -1,0 +1,33 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <form name="feedbackForm" role="form" class="form-horizontal" novalidate data-ng-submit="submit()">
+            <fieldset>
+                <legend>{{formTitle}}</legend>
+                <div class="form-group" data-ng-class="{'has-error': feedbackForm.inputTitle.$invalid}">
+                    <label for="inputTitle" class="col-md-2 control-label">Title</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" name="inputTitle" placeholder="Enter feedback title here ..." required data-ng-model="feedback.title">
+                    </div>
+                    <div class="col-md-2">
+                        <span data-ng-show="feedbackForm.inputTitle.$error.required" class="help-block">Required</span>
+                    </div>
+                </div>
+                <div class="form-group" data-ng-class="{'has-error': feedbackForm.inputDescription.$invalid}">
+                    <label for="inputDescription" class="col-md-2 control-label">Description</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" name="inputDescription" placeholder="Enter feedback description here ..." required data-ng-model="feedback.description">
+                    </div>
+                    <div class="col-md-2">
+                        <span data-ng-show="feedbackForm.inputDescription.$error.required" class="help-block">Required</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <button type="submit" data-ng-disabled="feedbackForm.$invalid" class="btn btn-primary">{{formTitle}}</button>
+                        <button type="button" class="btn" data-ng-click="cancel()">Cancel</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+﻿@model RentThatBike.Web.Models.LoginData
+@{
+    Layout = "~/Views/Shared/_LayoutMinimal.cshtml";
+    ViewBag.Title = "Log in to Rent That Bike!";
+}
+<div class="container">
+    @using (Html.BeginForm("LogIn", "Login", FormMethod.Post, new { @class = "form-signin", role = "form" }))
+    {
+        <h2 class="form-signin-heading">Please log in</h2>
+        @Html.HiddenFor(m => m.Redirect)
+        @Html.ValidationSummary()
+        @Html.TextBoxFor(m => m.EmailAddress, new { type = "email", @class = "form-control", placeholder = "Email Address", required = "", autofocus = "" })
+        @Html.TextBoxFor(m => m.Password, new { type = "password", @class = "form-control", placeholder = "Password", required = "required" })
+        <div class="checkbox">
+            @Html.CheckBoxFor(m => m.RememberMe) Remember me
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
+    }
+</div>

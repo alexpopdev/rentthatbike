@@ -1,0 +1,55 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <form name="customerForm" role="form" class="form-horizontal" novalidate data-ng-submit="submit()">
+            <fieldset>
+                <legend>{{formTitle}}</legend>
+                <div class="form-group" data-ng-show="!isNew">
+                    <label for="inputId" class="col-md-2 control-label">Id</label>
+                    <div class="col-md-1">
+                        <input type="text" class="form-control" name="inputId" value="{{customer.id}}" disabled>
+                    </div>
+                </div>
+                <div class="form-group" data-ng-class="{'has-error': customerForm.inputFirstName.$invalid}">
+                    <label for="inputFirstName" class="col-md-2 control-label">First name</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" name="inputFirstName" placeholder="Enter first name here ..." required data-ng-model="customer.firstName">
+                    </div>
+                    <div class="col-md-2">
+                        <span data-ng-show="customerForm.inputFirstName.$error.required" class="help-block">Required</span>
+                    </div>
+                </div>
+                <div class="form-group" data-ng-class="{'has-error': customerForm.inputLastName.$invalid}">
+                    <label for="inputLastName" class="col-md-2 control-label">Last name</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" name="inputLastName" placeholder="Enter last name here ..." required data-ng-model="customer.lastName">
+                    </div>
+                    <div class="col-md-2">
+                        <span data-ng-show="customerForm.inputLastName.$error.required" class="help-block">Required</span>
+                    </div>
+                </div>
+                <div class="form-group" data-ng-class="{'has-error': customerForm.inputEmail.$invalid}">
+                    <label for="inputEmail" class="col-md-2 control-label">Email</label>
+                    <div class="col-md-4">
+                        <input type="email" class="form-control" name="inputEmail" placeholder="Enter email here ..." required data-ng-model="customer.email">
+                    </div>
+                    <div class="col-md-2">
+                        <span data-ng-show="customerForm.inputEmail.$error.required" class="help-block">Required</span>
+                        <span data-ng-show="customerForm.inputEmail.$error.email" class="help-block">Not a valid email</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPhone" class="col-md-2 control-label">Phone</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" name="inputPhone" placeholder="Enter phone here ..." required data-ng-model="customer.phone">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <button type="submit" data-ng-disabled="customerForm.$invalid" class="btn btn-primary">{{formTitle}}</button>
+                        <button type="button" class="btn" data-ng-click="cancel()">Cancel</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
